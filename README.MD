@@ -1,4 +1,4 @@
-# 📖 Proyecto final Globant Talent Ready
+# 📖 Proyecto Final Globant Talent Ready
 
 Framework de automatización de pruebas desarrollado con **Playwright**, **TypeScript** y **@faker-js/faker**.
 
