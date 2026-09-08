@@ -1,4 +1,4 @@
-# 📖 ERP Sales & Transport Automation Framework
+# 📖 Proyecto final Globant Talent Ready
 
 Framework de automatización de pruebas desarrollado con **Playwright**, **TypeScript** y **@faker-js/faker**.
 
