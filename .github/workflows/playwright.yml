@@ -27,10 +27,18 @@ jobs:
 
       - name: Run API Tests
         env:
-          BASE_URL: ${{ secrets.BASE_URL }}
+          BASE_URL: ${{ secrets.BASE_URL || vars.BASE_URL }}
           USER_ADMIN: ${{ secrets.USER_ADMIN }}
           PASSWORD_ADMIN: ${{ secrets.PASSWORD_ADMIN }}
         run: npx playwright test tests/e2e/e2e.api.spec.ts
+
+      - name: Upload API Playwright Report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report-api
+          path: playwright-report/
+          retention-days: 30
 
   # Pruebas Web UI
   test-web:
@@ -54,12 +62,16 @@ jobs:
 
       - name: Run Web Tests
         env:
-          BASE_URL: ${{ secrets.BASE_URL }}
+          BASE_URL: ${{ secrets.BASE_URL || vars.BASE_URL }}
           USER_ADMIN: ${{ secrets.USER_ADMIN }}
           PASSWORD_ADMIN: ${{ secrets.PASSWORD_ADMIN }}
+          CLIENT_URL: ${{ secrets.CLIENT_URL || vars.CLIENT_URL }}
+          ARTICLE_URL: ${{ secrets.ARTICLE_URL || vars.ARTICLE_URL }}
+          INVOICE_URL: ${{ secrets.INVOICE_URL || vars.INVOICE_URL }}
+          PAYMENT_URL: ${{ secrets.PAYMENT_URL || vars.PAYMENT_URL }}
         run: npx playwright test tests/e2e/e2e.web.spec.ts
 
-      - name: Upload Playwright Report
+      - name: Upload Web Playwright Report
         if: always()
         uses: actions/upload-artifact@v4
         with:
