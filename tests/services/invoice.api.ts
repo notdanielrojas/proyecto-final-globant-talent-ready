@@ -6,7 +6,7 @@ export class InvoiceApiService {
 
   constructor(request: APIRequestContext) {
     this.request = request;
-    this.baseUrl = process.env.API_URL || "https://back-imcoarca.leonardojose.dev";
+    this.baseUrl = process.env.API_BASE_URL!;
   }
 
   private getHeaders(token: string) {

@@ -6,7 +6,7 @@ export class AuthApiService {
 
   constructor(request: APIRequestContext) {
     this.request = request;
-    this.apiBaseUrl = process.env.API_URL || "https://back-imcoorca.leonardojose.dev";
+    this.apiBaseUrl = process.env.API_BASE_URL!;
   }
 
   async login(email?: string, password?: string): Promise<APIResponse> {
