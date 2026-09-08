@@ -28,7 +28,7 @@ jobs:
       - name: Run API Tests
         env:
           BASE_URL: ${{ secrets.BASE_URL || vars.BASE_URL }}
-          API_URL: ${{ secrets.API_URL || vars.API_URL }}
+          API_BASE_URL: ${{ secrets.API_BASE_URL || vars.API_BASE_URL }}
           USER_ADMIN: ${{ secrets.USER_ADMIN }}
           PASSWORD_ADMIN: ${{ secrets.PASSWORD_ADMIN }}
         run: npx playwright test tests/e2e/e2e.api.spec.ts
