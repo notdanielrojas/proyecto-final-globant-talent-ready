@@ -86,8 +86,8 @@ features/
 ### Clonar e instalar
 
 ```bash
-git clone https://github.com/tu-usuario/ERP-Transport-Automation.git
-cd ERP-Transport-Automation
+git clone https://github.com/tu-usuario/proyecto-final-globant-talent-ready.git
+cd proyecto-final-globant-talent-ready
 
 npm install
 npx playwright install --with-deps
