@@ -1,4 +1,4 @@
-# 📖 Proyecto Final Globant Talent Ready
+# 📖 Proyecto Final - Globant Talent Ready
 
 Framework de automatización de pruebas desarrollado con **Playwright**, **TypeScript** y **@faker-js/faker**.
 
@@ -60,12 +60,17 @@ services/
 ├── invoice.api.ts
 └── payment.api.ts
 
-tests/
+tests/e2e
 ├── e2e.web.spec.ts
+└── e2e.api.spec.ts
+
+tests
+├── login.spec.ts
 ├── clients.spec.ts
 ├── articles.spec.ts
 ├── invoice.spec.ts
 └── payment.spec.ts
+
 
 features/
 ├── authentication.feature
