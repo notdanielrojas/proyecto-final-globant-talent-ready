@@ -6,7 +6,7 @@ export class ArticleApiService {
 
   constructor(request: APIRequestContext) {
     this.request = request;
-    this.baseUrl = process.env.API_URL || "";
+    this.baseUrl = process.env.API_BASE_URL || process.env.BASE_URL || "";
   }
 
   private getHeaders(token: string) {
