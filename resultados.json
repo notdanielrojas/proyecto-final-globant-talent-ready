@@ -18,7 +18,7 @@
     "grepInvert": null,
     "maxFailures": 0,
     "metadata": {
-      "actualWorkers": 3
+      "actualWorkers": 1
     },
     "preserveOutput": "always",
     "projects": [
@@ -27,7 +27,7 @@
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
-          "actualWorkers": 3
+          "actualWorkers": 1
         },
         "id": "chromium",
         "name": "chromium",
@@ -43,7 +43,7 @@
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
-          "actualWorkers": 3
+          "actualWorkers": 1
         },
         "id": "firefox",
         "name": "firefox",
@@ -59,7 +59,7 @@
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
-          "actualWorkers": 3
+          "actualWorkers": 1
         },
         "id": "webkit",
         "name": "webkit",
@@ -99,7 +99,7 @@
     "updateSnapshots": "missing",
     "updateSourceMethod": "patch",
     "version": "1.62.0",
-    "workers": 8,
+    "workers": 1,
     "webServer": null
   },
   "suites": [
@@ -132,12 +132,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 923,
+                      "duration": 768,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-09-08T05:03:02.398Z",
+                      "startTime": "2026-09-08T14:15:14.018Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -166,12 +166,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 198,
+                      "duration": 197,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-09-08T05:03:03.347Z",
+                      "startTime": "2026-09-08T14:15:14.810Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -181,7 +181,41 @@
               ],
               "id": "8c50d15061188b0386c6-bb3e0d0cddb50107b146",
               "file": "e2e/e2e.api.spec.ts",
-              "line": 21,
+              "line": 22,
+              "column": 3
+            },
+            {
+              "title": "2.1 CLIENTS - Update client details via ClientApiService",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 193,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-09-08T14:15:15.014Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8c50d15061188b0386c6-253bd4afd7edf0a460ce",
+              "file": "e2e/e2e.api.spec.ts",
+              "line": 33,
               "column": 3
             },
             {
@@ -200,12 +234,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 189,
+                      "duration": 186,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-09-08T05:03:03.552Z",
+                      "startTime": "2026-09-08T14:15:15.213Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -215,11 +249,79 @@
               ],
               "id": "8c50d15061188b0386c6-e110a47f1ed5e40c92db",
               "file": "e2e/e2e.api.spec.ts",
-              "line": 31,
+              "line": 40,
+              "column": 3
+            },
+            {
+              "title": "3.1 ARTICLES - Update product details via ArticleApiService",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 184,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-09-08T14:15:15.404Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8c50d15061188b0386c6-ac7a113e6d281f8bc867",
+              "file": "e2e/e2e.api.spec.ts",
+              "line": 51,
               "column": 3
             },
             {
               "title": "4. INVOICE - Issue invoice linking Client and Article",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 217,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-09-08T14:15:15.597Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8c50d15061188b0386c6-041618aa1ff250f1a176",
+              "file": "e2e/e2e.api.spec.ts",
+              "line": 58,
+              "column": 3
+            },
+            {
+              "title": "5. PAYMENT - Register payment via PaymentApiService",
               "ok": true,
               "tags": [],
               "tests": [
@@ -239,41 +341,7 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-09-08T05:03:03.748Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "8c50d15061188b0386c6-041618aa1ff250f1a176",
-              "file": "e2e/e2e.api.spec.ts",
-              "line": 41,
-              "column": 3
-            },
-            {
-              "title": "5. PAYMENT - Register payment via PaymentApiService",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 225,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-09-08T05:03:03.972Z",
+                      "startTime": "2026-09-08T14:15:15.826Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -283,7 +351,7 @@
               ],
               "id": "8c50d15061188b0386c6-e997269bff4c1dd30a73",
               "file": "e2e/e2e.api.spec.ts",
-              "line": 59,
+              "line": 76,
               "column": 3
             },
             {
@@ -302,12 +370,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 715,
+                      "duration": 719,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-09-08T05:03:04.202Z",
+                      "startTime": "2026-09-08T14:15:16.051Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -317,7 +385,7 @@
               ],
               "id": "8c50d15061188b0386c6-d29348a25841ed8c1a09",
               "file": "e2e/e2e.api.spec.ts",
-              "line": 70,
+              "line": 87,
               "column": 3
             },
             {
@@ -334,14 +402,14 @@
                   "results": [
                     {
                       "workerIndex": 1,
-                      "parallelIndex": 1,
+                      "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 992,
+                      "duration": 764,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-09-08T05:03:02.380Z",
+                      "startTime": "2026-09-08T14:15:17.265Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -368,14 +436,14 @@
                   "results": [
                     {
                       "workerIndex": 1,
-                      "parallelIndex": 1,
+                      "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 192,
+                      "duration": 194,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-09-08T05:03:03.396Z",
+                      "startTime": "2026-09-08T14:15:18.053Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -385,7 +453,41 @@
               ],
               "id": "8c50d15061188b0386c6-59455c623037181e6b35",
               "file": "e2e/e2e.api.spec.ts",
-              "line": 21,
+              "line": 22,
+              "column": 3
+            },
+            {
+              "title": "2.1 CLIENTS - Update client details via ClientApiService",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 184,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-09-08T14:15:18.254Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8c50d15061188b0386c6-465a63f4b5316bf74123",
+              "file": "e2e/e2e.api.spec.ts",
+              "line": 33,
               "column": 3
             },
             {
@@ -402,14 +504,14 @@
                   "results": [
                     {
                       "workerIndex": 1,
-                      "parallelIndex": 1,
+                      "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 176,
+                      "duration": 180,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-09-08T05:03:03.594Z",
+                      "startTime": "2026-09-08T14:15:18.444Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -419,7 +521,41 @@
               ],
               "id": "8c50d15061188b0386c6-ba662be060b4af2bbdc7",
               "file": "e2e/e2e.api.spec.ts",
-              "line": 31,
+              "line": 40,
+              "column": 3
+            },
+            {
+              "title": "3.1 ARTICLES - Update product details via ArticleApiService",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 180,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-09-08T14:15:18.629Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8c50d15061188b0386c6-0b40fe0654bbec6c6e30",
+              "file": "e2e/e2e.api.spec.ts",
+              "line": 51,
               "column": 3
             },
             {
@@ -436,14 +572,14 @@
                   "results": [
                     {
                       "workerIndex": 1,
-                      "parallelIndex": 1,
+                      "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 236,
+                      "duration": 221,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-09-08T05:03:03.776Z",
+                      "startTime": "2026-09-08T14:15:18.815Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -453,7 +589,7 @@
               ],
               "id": "8c50d15061188b0386c6-2e3f1f154a7bef3a1b4e",
               "file": "e2e/e2e.api.spec.ts",
-              "line": 41,
+              "line": 58,
               "column": 3
             },
             {
@@ -470,14 +606,14 @@
                   "results": [
                     {
                       "workerIndex": 1,
-                      "parallelIndex": 1,
+                      "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 222,
+                      "duration": 201,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-09-08T05:03:04.018Z",
+                      "startTime": "2026-09-08T14:15:19.046Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -487,7 +623,7 @@
               ],
               "id": "8c50d15061188b0386c6-f2a0702959bd8e7dd11d",
               "file": "e2e/e2e.api.spec.ts",
-              "line": 59,
+              "line": 76,
               "column": 3
             },
             {
@@ -504,14 +640,14 @@
                   "results": [
                     {
                       "workerIndex": 1,
-                      "parallelIndex": 1,
+                      "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 692,
+                      "duration": 709,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-09-08T05:03:04.245Z",
+                      "startTime": "2026-09-08T14:15:19.253Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -521,7 +657,7 @@
               ],
               "id": "8c50d15061188b0386c6-92bc9ed6719898a56f68",
               "file": "e2e/e2e.api.spec.ts",
-              "line": 70,
+              "line": 87,
               "column": 3
             },
             {
@@ -538,14 +674,14 @@
                   "results": [
                     {
                       "workerIndex": 2,
-                      "parallelIndex": 2,
+                      "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 922,
+                      "duration": 755,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-09-08T05:03:02.398Z",
+                      "startTime": "2026-09-08T14:15:20.436Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -572,14 +708,14 @@
                   "results": [
                     {
                       "workerIndex": 2,
-                      "parallelIndex": 2,
+                      "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 202,
+                      "duration": 193,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-09-08T05:03:03.344Z",
+                      "startTime": "2026-09-08T14:15:21.215Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -589,7 +725,41 @@
               ],
               "id": "8c50d15061188b0386c6-70a2394c3106d1c92750",
               "file": "e2e/e2e.api.spec.ts",
-              "line": 21,
+              "line": 22,
+              "column": 3
+            },
+            {
+              "title": "2.1 CLIENTS - Update client details via ClientApiService",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 184,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-09-08T14:15:21.415Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8c50d15061188b0386c6-98d0e3ec7e100fbf59d6",
+              "file": "e2e/e2e.api.spec.ts",
+              "line": 33,
               "column": 3
             },
             {
@@ -606,14 +776,14 @@
                   "results": [
                     {
                       "workerIndex": 2,
-                      "parallelIndex": 2,
+                      "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 187,
+                      "duration": 186,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-09-08T05:03:03.554Z",
+                      "startTime": "2026-09-08T14:15:21.605Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -623,7 +793,41 @@
               ],
               "id": "8c50d15061188b0386c6-84720a46eda7aa4cd724",
               "file": "e2e/e2e.api.spec.ts",
-              "line": 31,
+              "line": 40,
+              "column": 3
+            },
+            {
+              "title": "3.1 ARTICLES - Update product details via ArticleApiService",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 184,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-09-08T14:15:21.796Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8c50d15061188b0386c6-d7a40cf2d566a4a97299",
+              "file": "e2e/e2e.api.spec.ts",
+              "line": 51,
               "column": 3
             },
             {
@@ -640,14 +844,14 @@
                   "results": [
                     {
                       "workerIndex": 2,
-                      "parallelIndex": 2,
+                      "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 246,
+                      "duration": 211,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-09-08T05:03:03.746Z",
+                      "startTime": "2026-09-08T14:15:21.986Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -657,7 +861,7 @@
               ],
               "id": "8c50d15061188b0386c6-bc1fb5e0bd7b629a29bb",
               "file": "e2e/e2e.api.spec.ts",
-              "line": 41,
+              "line": 58,
               "column": 3
             },
             {
@@ -674,14 +878,14 @@
                   "results": [
                     {
                       "workerIndex": 2,
-                      "parallelIndex": 2,
+                      "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 215,
+                      "duration": 203,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-09-08T05:03:03.997Z",
+                      "startTime": "2026-09-08T14:15:22.208Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -691,7 +895,7 @@
               ],
               "id": "8c50d15061188b0386c6-e9ca67499eedd601bdc3",
               "file": "e2e/e2e.api.spec.ts",
-              "line": 59,
+              "line": 76,
               "column": 3
             },
             {
@@ -708,14 +912,14 @@
                   "results": [
                     {
                       "workerIndex": 2,
-                      "parallelIndex": 2,
+                      "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 700,
+                      "duration": 702,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-09-08T05:03:04.219Z",
+                      "startTime": "2026-09-08T14:15:22.418Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -725,7 +929,7 @@
               ],
               "id": "8c50d15061188b0386c6-2e7ca15820bb9f326f7d",
               "file": "e2e/e2e.api.spec.ts",
-              "line": 70,
+              "line": 87,
               "column": 3
             }
           ]
@@ -735,9 +939,9 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-09-08T05:03:01.742Z",
-    "duration": 3224.924,
-    "expected": 18,
+    "startTime": "2026-09-08T14:15:13.443Z",
+    "duration": 9707.318,
+    "expected": 24,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0

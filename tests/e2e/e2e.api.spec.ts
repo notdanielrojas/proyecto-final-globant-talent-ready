@@ -11,11 +11,12 @@ test.describe.serial("Suite API End-To-End", () => {
   let paymentId: number;
 
   test("1. AUTH - Login via AuthApiService", async ({ authApi }) => {
-    const response = await authApi.login(process.env.USER_ADMIN! , process.env.PASSWORD_ADMIN!);
+    const response = await authApi.login(process.env.USER_ADMIN!, process.env.PASSWORD_ADMIN!);
 
     expect(response.status()).toBe(200);
     const body = await response.json();
-    authToken = body.access_token;
+    authToken = body.access_token || body.token || body.data?.token;
+    expect(authToken).toBeDefined();
   });
 
   test("2. CLIENTS - Create client via ClientApiService", async ({ clientApi }) => {
@@ -26,6 +27,14 @@ test.describe.serial("Suite API End-To-End", () => {
     const body = await response.json();
     clientId = body.data.id;
     customerCode = body.data.customer_code;
+    expect(clientId).toBeDefined();
+  });
+
+  test("2.1 CLIENTS - Update client details via ClientApiService", async ({ clientApi }) => {
+    const updatePayload = ApiDataFactory.createClientPayload();
+    const response = await clientApi.updateClient(clientId, updatePayload, authToken);
+
+    expect([200, 204]).toContain(response.status());
   });
 
   test("3. ARTICLES - Create product via ArticleApiService", async ({ articleApi }) => {
@@ -36,6 +45,14 @@ test.describe.serial("Suite API End-To-End", () => {
     const body = await response.json();
     articleId = body.data.id;
     articleSku = body.data.sku;
+    expect(articleId).toBeDefined();
+  });
+
+  test("3.1 ARTICLES - Update product details via ArticleApiService", async ({ articleApi }) => {
+    const updatePayload = ApiDataFactory.createArticlePayload();
+    const response = await articleApi.updateArticle(articleId, updatePayload, authToken);
+
+    expect([200, 204]).toContain(response.status());
   });
 
   test("4. INVOICE - Issue invoice linking Client and Article", async ({ invoiceApi }) => {
