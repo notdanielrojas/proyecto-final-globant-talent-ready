@@ -34,7 +34,6 @@ type AllFixtures = {
 };
 
 export const test = base.extend<AllFixtures>({
-  // Login Page
   loginPage: async ({ page }, use) => {
     const loginPage = new LoginPage(page);
 
@@ -43,7 +42,6 @@ export const test = base.extend<AllFixtures>({
     await use(loginPage);
   },
 
-  // Authenticated Page
   authenticatedPage: async ({ page, loginPage }, use) => {
     const email = process.env.USER_ADMIN;
     const password = process.env.PASSWORD_ADMIN;
@@ -59,7 +57,6 @@ export const test = base.extend<AllFixtures>({
     await use(page);
   },
 
-  // UI Page Objects
   clientsPage: async ({ authenticatedPage }, use) => {
     await use(new ClientsPage(authenticatedPage));
   },
@@ -80,7 +77,6 @@ export const test = base.extend<AllFixtures>({
     await use(new PaymentPage(authenticatedPage));
   },
 
-// API Services inyectando la base URL de la API dinámicamente
   authApi: async ({ request }, use) => {
     await use(new AuthApiService(request));
   },
