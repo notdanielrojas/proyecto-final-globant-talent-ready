@@ -2,9 +2,9 @@ name: Playwright E2E Tests (API & Web)
 
 on:
   push:
-    branches: [ main, master ]
+    branches: [main, master]
   pull_request:
-    branches: [ main, master ]
+    branches: [main, master]
   workflow_dispatch:
 
 jobs:
@@ -20,7 +20,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'npm'
+          cache: "npm"
 
       - name: Install dependencies
         run: npm ci
@@ -28,6 +28,7 @@ jobs:
       - name: Run API Tests
         env:
           BASE_URL: ${{ secrets.BASE_URL || vars.BASE_URL }}
+          API_URL: ${{ secrets.API_URL || vars.API_URL }}
           USER_ADMIN: ${{ secrets.USER_ADMIN }}
           PASSWORD_ADMIN: ${{ secrets.PASSWORD_ADMIN }}
         run: npx playwright test tests/e2e/e2e.api.spec.ts
@@ -52,13 +53,13 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'npm'
+          cache: "npm"
 
       - name: Install dependencies
         run: npm ci
 
-      - name: Install Playwright Browsers
-        run: npx playwright install --with-deps chromium
+      - name: Install Playwright Browsers and Dependencies
+        run: npx playwright install --with-deps
 
       - name: Run Web Tests
         env:

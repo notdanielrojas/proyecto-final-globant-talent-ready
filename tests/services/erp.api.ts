@@ -6,7 +6,7 @@ export class ErpApiService {
 
   constructor(request: APIRequestContext) {
     this.request = request;
-    this.baseUrl = process.env.API_URL || "https://back-imcoarca.leonardojose.dev";
+    this.baseUrl = process.env.API_BASE_URL || process.env.BASE_URL || "";
   }
 
   private getHeaders(token: string) {

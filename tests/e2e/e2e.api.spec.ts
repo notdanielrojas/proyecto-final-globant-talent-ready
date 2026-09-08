@@ -11,7 +11,7 @@ test.describe.serial("Suite API End-To-End", () => {
   let paymentId: number;
 
   test("1. AUTH - Login via AuthApiService", async ({ authApi }) => {
-    const response = await authApi.login(process.env.USER_ADMIN || "tae@testing.com", process.env.PASSWORD_ADMIN || "Tae@2026");
+    const response = await authApi.login(process.env.USER_ADMIN! , process.env.PASSWORD_ADMIN!);
 
     expect(response.status()).toBe(200);
     const body = await response.json();

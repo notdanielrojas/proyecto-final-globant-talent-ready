@@ -80,7 +80,7 @@ export const test = base.extend<AllFixtures>({
     await use(new PaymentPage(authenticatedPage));
   },
 
-  // API Services
+// API Services inyectando la base URL de la API dinámicamente
   authApi: async ({ request }, use) => {
     await use(new AuthApiService(request));
   },

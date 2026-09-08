@@ -15,7 +15,6 @@ export default defineConfig({
   reporter: [["html"], ["json", { outputFile: "resultados.json" }], ["allure-playwright", { outputFolder: "allure-results" }]],
 
   use: {
-    baseURL: process.env.BASE_URL,
     trace: "on-first-retry",
   },
 
