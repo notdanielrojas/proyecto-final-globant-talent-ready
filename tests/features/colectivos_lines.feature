@@ -1,13 +1,13 @@
-Requisito: Selección y Consulta de Líneas de Colectivo
+Feature: Colectivo Line Selection and Inquiry
 
-  Escenario: Agregar una línea a favoritos
-    Dado que el usuario está en el buscador de líneas
-    Cuando busca la "Línea 5000" y la selecciona
-    Y presiona el botón "Agregar a Favoritos"
-    Entonces la línea debe quedar guardada en su sección de accesos directos
+  Scenario: Add a colectivo line to favorites
+    Given the user is on the bus line search screen
+    When they search for "Line 5000" and select it
+    And press the "Add to Favorites" button
+    Then the line should be saved in their shortcuts section
 
-  Escenario: Consultar trazado de recorrido y tarifa
-    Dado que el usuario selecciona una línea de colectivo
-    Cuando consulta los detalles de la ruta
-    Entonces la app debe mostrar el mapa con el trazado de la línea
-    Y el valor actualizado de la tarifa por tramo
+  Scenario: View route path and fare details
+    Given the user selects a colectivo line
+    When they check the route details
+    Then the app should display the map with the route path
+    And show the updated fare cost per section

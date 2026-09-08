@@ -1,14 +1,14 @@
-Requisito: Solicitud de Colectivo en Tiempo Real
+Feature: Real-Time Bus Ride Request
 
-  Escenario: Solicitud exitosa de un colectivo
-    Dado que el usuario tiene la ubicación GPS activada
-    Y selecciona una línea disponible con cupos
-    Cuando confirma la solicitud de abordaje desde su posición actual
-    Entonces el sistema debe buscar un colectivo cercano disponible
-    Y mostrar los datos del vehículo, conductor y tiempo estimado de llegada (ETA)
+  Scenario: Successful bus request
+    Given the user has GPS location enabled
+    And selects an available bus line with open seats
+    When they confirm the boarding request from their current position
+    Then the system should assign an available nearby bus
+    And display vehicle details, driver information, and estimated time of arrival (ETA)
 
-  Escenario: Intento de reserva sin cupos disponibles
-    Dado que todos los colectivos de la línea elegida están completos
-    Cuando el usuario intenta solicitar un vehículo
-    Entonces la app debe notificar que no hay cupos en ese momento
-    Y ofrecer la opción de suscribirse a una alerta de disponibilidad
+  Scenario: Booking attempt with no available seats
+    Given all colectivos for the selected line are fully occupied
+    When the user attempts to request a ride
+    Then the app should notify that no seats are currently available
+    And offer an option to subscribe to availability alerts
