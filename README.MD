@@ -109,6 +109,7 @@ USER_ADMIN=
 PASSWORD_ADMIN=
 
 BASE_URL=
+API_BASE_URL=
 CLIENT_URL=
 ARTICLE_URL=
 INVOICE_URL=
@@ -137,6 +138,7 @@ npx playwright test --ui
 
 ```bash
 npx playwright test tests/e2e.web.spec.ts
+npx playwright test tests/e2e.api.spec.ts
 ```
 
 ### Suite específica
