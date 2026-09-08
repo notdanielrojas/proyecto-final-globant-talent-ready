@@ -1,0 +1,309 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: e2e\e2e.web.spec.ts >> Suite Web E2E - Flujo Completo de Ventas ERP >> 4. Registrar una nueva Cobranza
+- Location: tests\e2e\e2e.web.spec.ts:39:1
+
+# Error details
+
+```
+Error: locator.click: Error: strict mode violation: getByTitle('Llenar con saldo pendiente') resolved to 6 elements:
+    1) <button type="button" title="Llenar con saldo pendiente" aria-label="Aplicar saldo completo ($ 1.761,15) para factura 284" class="flex-shrink-0 p-1.5 text-indigo-600 hover:text-indigo-800 hover:bg-indigo-50 rounded border border-gray-200 hover:border-indigo-300 transition-colors">…</button> aka getByRole('button', { name: 'Aplicar saldo completo ($ 1.761,15) para factura 284' })
+    2) <button type="button" title="Llenar con saldo pendiente" aria-label="Aplicar saldo completo ($ 1.761,15) para factura 282" class="flex-shrink-0 p-1.5 text-indigo-600 hover:text-indigo-800 hover:bg-indigo-50 rounded border border-gray-200 hover:border-indigo-300 transition-colors">…</button> aka getByRole('button', { name: 'Aplicar saldo completo ($ 1.761,15) para factura 282' })
+    3) <button type="button" title="Llenar con saldo pendiente" aria-label="Aplicar saldo completo ($ 1.761,15) para factura 274" class="flex-shrink-0 p-1.5 text-indigo-600 hover:text-indigo-800 hover:bg-indigo-50 rounded border border-gray-200 hover:border-indigo-300 transition-colors">…</button> aka getByRole('button', { name: 'Aplicar saldo completo ($ 1.761,15) para factura 274' })
+    4) <button type="button" title="Llenar con saldo pendiente" aria-label="Aplicar saldo completo ($ 1.761,15) para factura 273" class="flex-shrink-0 p-1.5 text-indigo-600 hover:text-indigo-800 hover:bg-indigo-50 rounded border border-gray-200 hover:border-indigo-300 transition-colors">…</button> aka getByRole('button', { name: 'Aplicar saldo completo ($ 1.761,15) para factura 273' })
+    5) <button type="button" title="Llenar con saldo pendiente" aria-label="Aplicar saldo completo ($ 1.761,15) para factura 272" class="flex-shrink-0 p-1.5 text-indigo-600 hover:text-indigo-800 hover:bg-indigo-50 rounded border border-gray-200 hover:border-indigo-300 transition-colors">…</button> aka getByRole('button', { name: 'Aplicar saldo completo ($ 1.761,15) para factura 272' })
+    6) <button type="button" title="Llenar con saldo pendiente" aria-label="Aplicar saldo completo ($ 1.761,15) para factura 271" class="flex-shrink-0 p-1.5 text-indigo-600 hover:text-indigo-800 hover:bg-indigo-50 rounded border border-gray-200 hover:border-indigo-300 transition-colors">…</button> aka getByRole('button', { name: 'Aplicar saldo completo ($ 1.761,15) para factura 271' })
+
+Call log:
+  - waiting for getByTitle('Llenar con saldo pendiente')
+
+```
+
+# Page snapshot
+
+```yaml
+- generic [ref=e2]:
+  - generic [ref=e3]:
+    - complementary [ref=e4]:
+      - img "Logo" [ref=e6]
+      - navigation [ref=e7]:
+        - searchbox "Buscar en el menú" [ref=e9]
+        - list [ref=e10]:
+          - listitem [ref=e11]:
+            - link "Dashboard" [ref=e12] [cursor=pointer]:
+              - /url: /dashboard
+          - listitem [ref=e16]:
+            - generic [ref=e17]:
+              - button "Gestión de Clientes" [ref=e18] [cursor=pointer]
+              - list [ref=e24]:
+                - listitem [ref=e25]:
+                  - link "Prospectos" [ref=e26] [cursor=pointer]:
+                    - /url: /leads
+                - listitem [ref=e31]:
+                  - link "Clientes" [ref=e32] [cursor=pointer]:
+                    - /url: /clientes
+                - listitem [ref=e37]:
+                  - link "Facturas de Venta" [ref=e38] [cursor=pointer]:
+                    - /url: /facturas-de-venta
+                - listitem [ref=e43]:
+                  - link "Notas de Crédito" [ref=e44] [cursor=pointer]:
+                    - /url: /notas-credito
+                - listitem [ref=e49]:
+                  - link "Notas Financieras" [ref=e50] [cursor=pointer]:
+                    - /url: /notas-financieras
+                - listitem [ref=e55]:
+                  - link "Pedidos de Venta" [ref=e56] [cursor=pointer]:
+                    - /url: /pedidos-de-venta
+                - listitem [ref=e61]:
+                  - link "Autorizar pedidos" [ref=e62] [cursor=pointer]:
+                    - /url: /autorizacion-pedidos
+                - listitem [ref=e67]:
+                  - link "Cobranzas" [ref=e68] [cursor=pointer]:
+                    - /url: /cobranzas
+                - listitem [ref=e73]:
+                  - link "Remitos" [ref=e74] [cursor=pointer]:
+                    - /url: /remitos
+                - listitem [ref=e79]:
+                  - link "Vendedores" [ref=e80] [cursor=pointer]:
+                    - /url: /vendedores
+                - listitem [ref=e85]:
+                  - link "Compradores" [ref=e86] [cursor=pointer]:
+                    - /url: /compradores
+          - listitem [ref=e91]:
+            - button "Gestión de Proveedores" [ref=e93] [cursor=pointer]
+          - listitem [ref=e99]:
+            - button "Inventario" [ref=e101] [cursor=pointer]
+          - listitem [ref=e107]:
+            - button "Finanzas" [ref=e109] [cursor=pointer]
+          - listitem [ref=e115]:
+            - button "Configuración" [ref=e117] [cursor=pointer]
+          - listitem [ref=e123]:
+            - link "Reportes" [ref=e124] [cursor=pointer]:
+              - /url: /reportes
+      - button "Contraer" [ref=e129]
+    - generic [ref=e133]:
+      - banner [ref=e134]:
+        - button "Cerrar Sesión" [ref=e135]
+      - main [ref=e136]:
+        - generic [ref=e137]:
+          - heading "Crear Cobranza" [level=2] [ref=e138]
+          - generic [ref=e139]:
+            - generic [ref=e140]:
+              - generic [ref=e141]: Cliente
+              - generic [ref=e142]:
+                - textbox "Código..." [ref=e144]: "00057"
+                - generic [ref=e145]:
+                  - textbox "Nombre..." [ref=e146]: Goyette - Welch
+                  - button "Limpiar" [ref=e147]
+                  - button "Buscar" [ref=e150]
+            - generic [ref=e153]:
+              - generic [ref=e154]: Fecha de Cobro
+              - textbox "Fecha de Cobro" [ref=e155]: 2026-09-07
+          - generic [ref=e156]:
+            - heading "Facturas Pendientes de Cobro" [level=3] [ref=e157]
+            - table [ref=e159]:
+              - rowgroup [ref=e160]:
+                - row [ref=e161]:
+                  - columnheader "Factura" [ref=e162]
+                  - columnheader "Fecha" [ref=e163]
+                  - columnheader "Total" [ref=e164]
+                  - columnheader "Saldo" [ref=e165]
+                  - columnheader "Monto a Aplicar" [ref=e166]
+              - rowgroup [ref=e167]:
+                - row [ref=e168]:
+                  - cell "284" [ref=e169]
+                  - cell "08/09/2026" [ref=e170]
+                  - cell "$ 1.761,15" [ref=e171]
+                  - cell "$ 1.761,15" [ref=e172]
+                  - cell [ref=e173]:
+                    - generic [ref=e174]:
+                      - textbox "0.00" [ref=e175]
+                      - button "Aplicar saldo completo ($ 1.761,15) para factura 284" [ref=e176]
+                - row [ref=e179]:
+                  - cell "282" [ref=e180]
+                  - cell "08/09/2026" [ref=e181]
+                  - cell "$ 1.761,15" [ref=e182]
+                  - cell "$ 1.761,15" [ref=e183]
+                  - cell [ref=e184]:
+                    - generic [ref=e185]:
+                      - textbox "0.00" [ref=e186]
+                      - button "Aplicar saldo completo ($ 1.761,15) para factura 282" [ref=e187]
+                - row [ref=e190]:
+                  - cell "274" [ref=e191]
+                  - cell "08/09/2026" [ref=e192]
+                  - cell "$ 1.761,15" [ref=e193]
+                  - cell "$ 1.761,15" [ref=e194]
+                  - cell [ref=e195]:
+                    - generic [ref=e196]:
+                      - textbox "0.00" [ref=e197]
+                      - button "Aplicar saldo completo ($ 1.761,15) para factura 274" [ref=e198]
+                - row [ref=e201]:
+                  - cell "273" [ref=e202]
+                  - cell "08/09/2026" [ref=e203]
+                  - cell "$ 1.761,15" [ref=e204]
+                  - cell "$ 1.761,15" [ref=e205]
+                  - cell [ref=e206]:
+                    - generic [ref=e207]:
+                      - textbox "0.00" [ref=e208]
+                      - button "Aplicar saldo completo ($ 1.761,15) para factura 273" [ref=e209]
+                - row [ref=e212]:
+                  - cell "272" [ref=e213]
+                  - cell "08/09/2026" [ref=e214]
+                  - cell "$ 1.761,15" [ref=e215]
+                  - cell "$ 1.761,15" [ref=e216]
+                  - cell [ref=e217]:
+                    - generic [ref=e218]:
+                      - textbox "0.00" [ref=e219]
+                      - button "Aplicar saldo completo ($ 1.761,15) para factura 272" [ref=e220]
+                - row [ref=e223]:
+                  - cell "271" [ref=e224]
+                  - cell "08/09/2026" [ref=e225]
+                  - cell "$ 1.761,15" [ref=e226]
+                  - cell "$ 1.761,15" [ref=e227]
+                  - cell [ref=e228]:
+                    - generic [ref=e229]:
+                      - textbox "0.00" [ref=e230]
+                      - button "Aplicar saldo completo ($ 1.761,15) para factura 271" [ref=e231]
+              - rowgroup [ref=e234]:
+                - row [ref=e235]:
+                  - cell "Total Aplicado:" [ref=e236]
+                  - cell "$ 0,00" [ref=e237]
+          - generic [ref=e238]:
+            - generic [ref=e239]:
+              - heading "Medios de Pago" [level=3] [ref=e240]
+              - button "Añadir Medio" [ref=e241]
+            - generic [ref=e244]:
+              - generic [ref=e245]:
+                - text: Medio
+                - combobox "Medio" [ref=e246]:
+                  - option "Efectivo" [selected]
+                  - option "Cheque"
+                  - option "Transferencia"
+                  - option "Documento"
+                  - option "Retención"
+                  - option "Ajuste"
+              - generic [ref=e247]:
+                - text: Cuenta
+                - generic [ref=e248]:
+                  - textbox "Código..." [active] [ref=e250]: "100100"
+                  - generic [ref=e251]:
+                    - textbox "Nombre..." [ref=e252]
+                    - button "Limpiar" [ref=e253]
+                    - button "Buscar" [ref=e256]
+              - generic [ref=e262]:
+                - text: Valor
+                - generic [ref=e263]:
+                  - textbox "0.00" [ref=e264]
+                  - button "Completar valor con el faltante respecto al total aplicado" [disabled]
+                  - button "Eliminar ítem" [ref=e265]
+            - generic [ref=e268]:
+              - generic [ref=e269]: "Total Medios de Pago:"
+              - generic [ref=e270]: $ 0,00
+          - generic [ref=e271]:
+            - generic [ref=e272]:
+              - heading "Descuentos y Retenciones" [level=2] [ref=e273]
+              - paragraph [ref=e274]: El cliente no tiene retenciones configuradas o aplicables.
+            - generic [ref=e275]:
+              - heading "Resumen" [level=2] [ref=e276]
+              - generic [ref=e277]:
+                - generic [ref=e278]: "Importe Bruto:"
+                - generic [ref=e279]: $ 0,00
+              - generic [ref=e280]:
+                - generic [ref=e281]: "Retenciones:"
+                - generic [ref=e282]: "- $ 0,00"
+              - generic [ref=e283]:
+                - generic [ref=e284]: "Neto a Cobrar:"
+                - generic [ref=e285]: $ 0,00
+              - generic [ref=e286]:
+                - generic [ref=e287]: "TOTAL COBRADO:"
+                - generic [ref=e288]: $ 0,00
+          - generic [ref=e289]:
+            - button "Cancelar" [ref=e290]
+            - button "Guardar Cobranza" [ref=e291]
+  - region "Notifications Alt+T":
+    - alert [ref=e295] [cursor=pointer]:
+      - text: "Cliente encontrado: Goyette - Welch"
+      - button "close" [ref=e299]
+      - progressbar "notification timer" [ref=e304]
+```
+
+# Test source
+
+```ts
+  1  | import { Locator, Page } from "@playwright/test";
+  2  | import { PaymentData } from "../factory/payment.factory.js";
+  3  | 
+  4  | export default class PaymentPage {
+  5  |   readonly page: Page;
+  6  |   readonly clienteCodigoInput: Locator;
+  7  |   readonly fechaCobroInput: Locator;
+  8  |   readonly cuentaInput: Locator;
+  9  |   readonly agregarMedioDePagoButton: Locator;
+  10 |   readonly payInvoiceTotalButton: Locator;
+  11 |   readonly payTotalDebtButton: Locator;
+  12 |   readonly guardarCobranzaButton: Locator;
+  13 | 
+  14 |   constructor(page: Page) {
+  15 |     this.page = page;
+  16 |     this.clienteCodigoInput = page.getByRole("textbox", { name: "Código..." });
+  17 |     this.fechaCobroInput = page.locator('input[type="date"]');
+  18 |     this.agregarMedioDePagoButton = page.getByRole("button", { name: "Añadir Medio" });
+  19 |     this.cuentaInput = page.locator(
+  20 |       "div[class='col-span-12 md:col-span-3'] div[class='flex w-full space-x-2 mt-1'] div:nth-child(1) input",
+  21 |     );
+  22 |     this.payInvoiceTotalButton = page.getByTitle("Llenar con saldo pendiente");
+  23 |     this.payTotalDebtButton = page.getByRole("button", { name: "Completar valor con el faltante respecto al total aplicado" });
+  24 | 
+  25 |     this.guardarCobranzaButton = page.getByRole("button", { name: "Guardar Cobranza" });
+  26 |   }
+  27 | 
+  28 |   async fillForm(payment: PaymentData): Promise<void> {
+  29 |     await this.fillClienteCodigoInput(payment.clienteCodigo);
+  30 |     await this.fillFechaCobroInput(payment.fechaCobro!);
+  31 |     await this.clickAgregarMedioDePagoButton();
+  32 |     await this.fillCuentaInput(payment.mediosPago[0].cuentaContable);
+  33 |     await this.clickPayInvoiceTotalButton();
+  34 |     await this.clickPayTotalDebtButton();
+  35 |     await this.clickGuardarCobranzaButton();
+  36 |   }
+  37 |   
+  38 | 
+  39 |   async fillClienteCodigoInput(clienteCodigo: string): Promise<void> {
+  40 |     await this.clienteCodigoInput.fill(clienteCodigo);
+  41 |     await this.clienteCodigoInput.press("Enter");
+  42 |     await this.page.waitForTimeout(1500);
+  43 |   }
+  44 | 
+  45 |   async fillFechaCobroInput(fechaCobro: string): Promise<void> {
+  46 |     await this.fechaCobroInput.fill(fechaCobro);
+  47 |   }
+  48 | 
+  49 |   async clickAgregarMedioDePagoButton(): Promise<void> {
+  50 |     await this.agregarMedioDePagoButton.click();
+  51 |   }
+  52 | 
+  53 |   async fillCuentaInput(cuentaContable: number): Promise<void> {
+  54 |     await this.cuentaInput.fill(cuentaContable.toString());
+  55 |   }
+  56 | 
+  57 |   async clickPayInvoiceTotalButton(): Promise<void> {
+> 58 |     await this.payInvoiceTotalButton.click();
+     |                                      ^ Error: locator.click: Error: strict mode violation: getByTitle('Llenar con saldo pendiente') resolved to 6 elements:
+  59 |   }
+  60 | 
+  61 |   async clickPayTotalDebtButton(): Promise<void> {
+  62 |     await this.payTotalDebtButton.click();
+  63 |   }
+  64 | 
+  65 |   async clickGuardarCobranzaButton(): Promise<void> {
+  66 |     await this.guardarCobranzaButton.click();
+  67 |   }
+  68 | }
+  69 | 
+```

@@ -1,0 +1,79 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: login.spec.ts >> Login Test Suite >> User should not be able to login with empty fields
+- Location: tests\login.spec.ts:16:3
+
+# Error details
+
+```
+Error: page.goto: Protocol error (Page.navigate): Invalid url: ""https://imcoarca.leonardojose.dev/login";"
+Call log:
+  - navigating to ""https://imcoarca.leonardojose.dev/login";", waiting until "load"
+
+```
+
+# Test source
+
+```ts
+  1  | import { Locator, Page } from '@playwright/test';
+  2  | 
+  3  | const BASE_URL: string = process.env.BASE_URL!;
+  4  | 
+  5  | export default class LoginPage {
+  6  |   readonly page: Page;
+  7  |   readonly emailInput: Locator;
+  8  |   readonly passwordInput: Locator;
+  9  |   readonly loginButton: Locator;
+  10 |   readonly forgotPasswordLink: Locator;
+  11 |   readonly passwordRecoveryMessage: Locator;
+  12 |   readonly validCredentialsMessage: Locator;
+  13 | 
+  14 |   constructor(page: Page) {
+  15 |     this.page = page;
+  16 |     this.emailInput = page.getByRole("textbox", { name: "Email" });
+  17 |     this.passwordInput = page.getByLabel("Contraseña", { exact: true });
+  18 |     this.loginButton = page.getByRole("button", { name: "Ingresar" });
+  19 |     this.forgotPasswordLink = page.getByRole("link", { name: "¿Olvidaste tu contraseña?" });
+  20 |     this.passwordRecoveryMessage = page.getByText('Si existe una cuenta con ese email, recibirás un correo con las instrucciones.', { exact: true });
+  21 |     this.validCredentialsMessage = page.getByText('Las credenciales proporcionadas son incorrectas.', { exact: true });
+  22 |   }
+  23 | 
+  24 |   async navigate() {
+> 25 |     await this.page.goto(BASE_URL);
+     |                     ^ Error: page.goto: Protocol error (Page.navigate): Invalid url: ""https://imcoarca.leonardojose.dev/login";"
+  26 |   }
+  27 | 
+  28 |   async fillForm(email: string, password: string) {
+  29 |     await this.fillEmail(email);
+  30 |     await this.fillPassword(password);
+  31 |     await this.clickLoginButton();
+  32 |   }
+  33 | 
+  34 |   async fillEmail(email: string) {
+  35 |     await this.emailInput.fill(email);
+  36 |   }
+  37 | 
+  38 |   async fillPassword(password: string) {
+  39 |     await this.passwordInput.fill(password);
+  40 |   }
+  41 | 
+  42 |   async clickLoginButton() {
+  43 |     await this.loginButton.click();
+  44 |   }
+  45 | 
+  46 |   async forgetPassword() {
+  47 |     await this.forgotPasswordLink.click();
+  48 |   }
+  49 | 
+  50 |   async getEmailValidationMessage() {
+  51 |     return await this.emailInput.evaluate((element: HTMLInputElement) => element.validationMessage);
+  52 |   }
+  53 | }
+  54 | 
+```

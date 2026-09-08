@@ -1,0 +1,81 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: login.spec.ts >> Login Test Suite >> User should be redirected correctly when clicking "¿Olvidaste tu contraseña?"
+- Location: tests\login.spec.ts:31:3
+
+# Error details
+
+```
+Error: expect(page).toHaveURL(expected) failed
+
+Expected pattern: /.*password\/reset|.*forgot-password/
+Received string:  "https://imcoarca.leonardojose.dev/recuperar-password"
+Timeout: 5000ms
+
+Call log:
+  - Expect "toHaveURL" with timeout 5000ms
+    14 × locator resolved to <html lang="en">…</html>
+       - unexpected value "https://imcoarca.leonardojose.dev/recuperar-password"
+
+```
+
+```yaml
+- img "Logo ERP"
+- heading "Recuperar Contraseña" [level=1]
+- paragraph: Ingresa tu email y te enviaremos un enlace para resetear tu contraseña.
+- text: Email
+- textbox "Email"
+- button "Solicitar Enlace"
+- link "Volver a Iniciar Sesión":
+  - /url: /login
+- region "Notifications Alt+T"
+```
+
+# Test source
+
+```ts
+  1  | import { test, expect } from './fixture/fixtures.js';
+  2  | import { faker } from '@faker-js/faker';
+  3  | 
+  4  | test.describe('Login Test Suite', () => {
+  5  | 
+  6  |   test("User login with valid credentials", async ({ page, loginPage }) => {
+  7  |     const email = process.env.USER_ADMIN!;
+  8  |     const password = process.env.PASSWORD_ADMIN!;
+  9  |     
+  10 |     await loginPage.fillForm(email, password);
+  11 |     
+  12 |     await expect(page).toHaveURL(/.*dashboard/); 
+  13 |   });
+  14 | 
+  15 |   test('User should not be able to login with empty fields', async ({ loginPage }) => {
+  16 |     await loginPage.clickLoginButton();
+  17 |     const validationMessage = await loginPage.getEmailValidationMessage();
+  18 |     expect(validationMessage).toBe('Please fill out this field.');
+  19 |   });
+  20 | 
+  21 |   test('User should not be able to login with invalid credentials', async ({ page, loginPage }) => {
+  22 |     const emailAleatorio = faker.internet.email();
+  23 |     const passwordAleatoria = faker.internet.password();
+  24 | 
+  25 |     await loginPage.fillForm(emailAleatorio, passwordAleatoria);
+  26 | 
+  27 |     const errorToast = page.locator('.toast-error'); 
+  28 |     await expect(errorToast).toBeVisible();
+  29 |   });
+  30 | 
+  31 |   test('User should be redirected correctly when clicking "¿Olvidaste tu contraseña?"', async ({ page, loginPage }) => {
+  32 |     await loginPage.forgetPassword();
+> 33 |     await expect(page).toHaveURL(/.*password\/reset|.*forgot-password/); 
+     |                        ^ Error: expect(page).toHaveURL(expected) failed
+  34 |   });
+  35 | 
+  36 | });
+  37 | 
+```

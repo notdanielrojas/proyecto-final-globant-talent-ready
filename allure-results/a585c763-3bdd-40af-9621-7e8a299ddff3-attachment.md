@@ -1,0 +1,82 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: login.spec.ts >> Login Test Suite >> User should not be able to login with invalid credentials
+- Location: tests\login.spec.ts:25:3
+
+# Error details
+
+```
+Error: page.goto: Protocol error (Playwright.navigate): Cannot navigate to invalid URL
+Call log:
+  - navigating to ""https://imcoarca.leonardojose.dev/login";", waiting until "load"
+
+```
+
+# Test source
+
+```ts
+  1  | import { Locator, Page } from '@playwright/test';
+  2  | import dotenv from 'dotenv';
+  3  | 
+  4  | dotenv.config();
+  5  | 
+  6  | const BASE_URL: string = process.env.BASE_URL!;
+  7  | 
+  8  | export default class LoginPage {
+  9  |   readonly page: Page;
+  10 |   readonly emailInput: Locator;
+  11 |   readonly passwordInput: Locator;
+  12 |   readonly loginButton: Locator;
+  13 |   readonly forgotPasswordLink: Locator;
+  14 |   readonly passwordRecoveryMessage: Locator;
+  15 |   readonly validCredentialsMessage: Locator;
+  16 | 
+  17 |   constructor(page: Page) {
+  18 |     this.page = page;
+  19 |     this.emailInput = page.getByRole("textbox", { name: "Email" });
+  20 |     this.passwordInput = page.getByLabel("Contraseña", { exact: true });
+  21 |     this.loginButton = page.getByRole("button", { name: "Ingresar" });
+  22 |     this.forgotPasswordLink = page.getByRole("link", { name: "¿Olvidaste tu contraseña?" });
+  23 |     this.passwordRecoveryMessage = page.getByText('Si existe una cuenta con ese email, recibirás un correo con las instrucciones.', { exact: true });
+  24 |     this.validCredentialsMessage = page.getByText('Las credenciales proporcionadas son incorrectas.', { exact: true });
+  25 |   }
+  26 | 
+  27 |   async navigate() {
+> 28 |     await this.page.goto(BASE_URL);
+     |                     ^ Error: page.goto: Protocol error (Playwright.navigate): Cannot navigate to invalid URL
+  29 |   }
+  30 | 
+  31 |   async fillForm(email: string, password: string) {
+  32 |     await this.fillEmail(email);
+  33 |     await this.fillPassword(password);
+  34 |     await this.clickLoginButton();
+  35 |   }
+  36 | 
+  37 |   async fillEmail(email: string) {
+  38 |     await this.emailInput.fill(email);
+  39 |   }
+  40 | 
+  41 |   async fillPassword(password: string) {
+  42 |     await this.passwordInput.fill(password);
+  43 |   }
+  44 | 
+  45 |   async clickLoginButton() {
+  46 |     await this.loginButton.click();
+  47 |   }
+  48 | 
+  49 |   async forgetPassword() {
+  50 |     await this.forgotPasswordLink.click();
+  51 |   }
+  52 | 
+  53 |   async getEmailValidationMessage() {
+  54 |     return await this.emailInput.evaluate((element: HTMLInputElement) => element.validationMessage);
+  55 |   }
+  56 | }
+  57 | 
+```

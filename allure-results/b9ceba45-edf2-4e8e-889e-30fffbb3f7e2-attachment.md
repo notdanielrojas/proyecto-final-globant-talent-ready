@@ -1,0 +1,437 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: createClient.spec.ts >> Client Management Test Suite >> User should be able to create a new client successfully
+- Location: tests\createClient.spec.ts:5:3
+
+# Error details
+
+```
+Test timeout of 30000ms exceeded.
+```
+
+```
+Error: page.waitForResponse: Test timeout of 30000ms exceeded.
+```
+
+# Page snapshot
+
+```yaml
+- generic [ref=e2]:
+  - generic [ref=e3]:
+    - complementary [ref=e4]:
+      - img "Logo" [ref=e6]
+      - navigation [ref=e7]:
+        - searchbox "Buscar en el menú" [ref=e9]
+        - list [ref=e10]:
+          - listitem [ref=e11]:
+            - link "Dashboard" [ref=e12] [cursor=pointer]:
+              - /url: /dashboard
+          - listitem [ref=e16]:
+            - generic [ref=e17]:
+              - button "Gestión de Clientes" [ref=e18] [cursor=pointer]
+              - list [ref=e24]:
+                - listitem [ref=e25]:
+                  - link "Prospectos" [ref=e26] [cursor=pointer]:
+                    - /url: /leads
+                - listitem [ref=e31]:
+                  - link "Clientes" [ref=e32] [cursor=pointer]:
+                    - /url: /clientes
+                - listitem [ref=e37]:
+                  - link "Facturas de Venta" [ref=e38] [cursor=pointer]:
+                    - /url: /facturas-de-venta
+                - listitem [ref=e43]:
+                  - link "Notas de Crédito" [ref=e44] [cursor=pointer]:
+                    - /url: /notas-credito
+                - listitem [ref=e49]:
+                  - link "Notas Financieras" [ref=e50] [cursor=pointer]:
+                    - /url: /notas-financieras
+                - listitem [ref=e55]:
+                  - link "Pedidos de Venta" [ref=e56] [cursor=pointer]:
+                    - /url: /pedidos-de-venta
+                - listitem [ref=e61]:
+                  - link "Autorizar pedidos" [ref=e62] [cursor=pointer]:
+                    - /url: /autorizacion-pedidos
+                - listitem [ref=e67]:
+                  - link "Cobranzas" [ref=e68] [cursor=pointer]:
+                    - /url: /cobranzas
+                - listitem [ref=e73]:
+                  - link "Remitos" [ref=e74] [cursor=pointer]:
+                    - /url: /remitos
+                - listitem [ref=e79]:
+                  - link "Vendedores" [ref=e80] [cursor=pointer]:
+                    - /url: /vendedores
+                - listitem [ref=e85]:
+                  - link "Compradores" [ref=e86] [cursor=pointer]:
+                    - /url: /compradores
+          - listitem [ref=e91]:
+            - button "Gestión de Proveedores" [ref=e93] [cursor=pointer]
+          - listitem [ref=e99]:
+            - button "Inventario" [ref=e101] [cursor=pointer]
+          - listitem [ref=e107]:
+            - button "Finanzas" [ref=e109] [cursor=pointer]
+          - listitem [ref=e115]:
+            - button "Configuración" [ref=e117] [cursor=pointer]
+          - listitem [ref=e123]:
+            - link "Reportes" [ref=e124] [cursor=pointer]:
+              - /url: /reportes
+      - button "Contraer" [ref=e129]
+    - generic [ref=e133]:
+      - banner [ref=e134]:
+        - button "Cerrar Sesión" [ref=e135]
+      - main [ref=e136]:
+        - generic [ref=e137]:
+          - generic [ref=e138]:
+            - heading "Listado de Clientes" [level=1] [ref=e140]
+            - button "Crear Cliente" [ref=e142]
+          - generic [ref=e145]:
+            - generic [ref=e146]: Buscar
+            - generic [ref=e147]:
+              - textbox "Buscar" [ref=e148]:
+                - /placeholder: Buscar...
+              - button "Buscar" [ref=e149]
+          - generic [ref=e155]:
+            - table [ref=e157]:
+              - rowgroup [ref=e158]:
+                - row [ref=e159]:
+                  - columnheader [ref=e160]:
+                    - button "Código Cliente" [ref=e161]
+                  - columnheader [ref=e165]:
+                    - button "Nombre o Razón Social" [ref=e166]
+                  - columnheader [ref=e170]:
+                    - button "CUIT" [ref=e171]
+                  - columnheader [ref=e175]:
+                    - button "Teléfono" [ref=e176]
+                  - columnheader [ref=e180]:
+                    - button "Email" [ref=e181]
+                  - columnheader [ref=e185]:
+                    - button "Persona de Contacto" [ref=e186]
+                  - columnheader [ref=e190]:
+                    - button "Rubro" [ref=e191]
+                  - columnheader [ref=e195]:
+                    - button "Zona" [ref=e196]
+                  - columnheader [ref=e200]:
+                    - button "Ley Exportación TDF" [ref=e201]
+                  - columnheader "Acciones" [ref=e205]
+              - rowgroup [ref=e206]:
+                - row [ref=e207] [cursor=pointer]:
+                  - cell "00001" [ref=e208]
+                  - cell "Empresa SAZZZX" [ref=e209]
+                  - cell "34-20268959-2" [ref=e210]
+                  - cell "-" [ref=e211]
+                  - cell "-" [ref=e212]
+                  - cell "-" [ref=e213]
+                  - cell "-" [ref=e214]
+                  - cell "-" [ref=e215]
+                  - cell "No" [ref=e216]
+                  - cell [ref=e218]:
+                    - generic [ref=e219]:
+                      - button "Editar" [ref=e220]
+                      - button "Eliminar" [ref=e223]
+                - row [ref=e226] [cursor=pointer]:
+                  - cell "00002" [ref=e227]
+                  - cell "Cliente Automatizacion TAE" [ref=e228]
+                  - cell "30-99999999-5" [ref=e229]
+                  - cell "-" [ref=e230]
+                  - cell "-" [ref=e231]
+                  - cell "-" [ref=e232]
+                  - cell "-" [ref=e233]
+                  - cell "-" [ref=e234]
+                  - cell "No" [ref=e235]
+                  - cell [ref=e237]:
+                    - generic [ref=e238]:
+                      - button "Editar" [ref=e239]
+                      - button "Eliminar" [ref=e242]
+                - row [ref=e245] [cursor=pointer]:
+                  - cell "00003" [ref=e246]
+                  - cell "Cliente API Bruno TAE Actualizado desde Bruno" [ref=e247]
+                  - cell "30-88888888-4" [ref=e248]
+                  - cell "-" [ref=e249]
+                  - cell "-" [ref=e250]
+                  - cell "-" [ref=e251]
+                  - cell "-" [ref=e252]
+                  - cell "-" [ref=e253]
+                  - cell "No" [ref=e254]
+                  - cell [ref=e256]:
+                    - generic [ref=e257]:
+                      - button "Editar" [ref=e258]
+                      - button "Eliminar" [ref=e261]
+                - row [ref=e264] [cursor=pointer]:
+                  - cell "00004" [ref=e265]
+                  - cell "Cliente Prueba TAE" [ref=e266]
+                  - cell "20123456789" [ref=e267]
+                  - cell "+56912345678" [ref=e268]
+                  - cell "cliente.prueba@testing.com" [ref=e269]
+                  - cell "-" [ref=e270]
+                  - cell "-" [ref=e271]
+                  - cell "-" [ref=e272]
+                  - cell "No" [ref=e273]
+                  - cell [ref=e275]:
+                    - generic [ref=e276]:
+                      - button "Editar" [ref=e277]
+                      - button "Eliminar" [ref=e280]
+                - row [ref=e283] [cursor=pointer]:
+                  - cell "00006" [ref=e284]
+                  - cell "Cliente Prueba TAE" [ref=e285]
+                  - cell "20123456789" [ref=e286]
+                  - cell "+56912345678" [ref=e287]
+                  - cell "cliente.prueba@testing.com" [ref=e288]
+                  - cell "-" [ref=e289]
+                  - cell "-" [ref=e290]
+                  - cell "-" [ref=e291]
+                  - cell "No" [ref=e292]
+                  - cell [ref=e294]:
+                    - generic [ref=e295]:
+                      - button "Editar" [ref=e296]
+                      - button "Eliminar" [ref=e299]
+                - row [ref=e302] [cursor=pointer]:
+                  - cell "00007" [ref=e303]
+                  - cell "Cliente Prueba 1788092374004" [ref=e304]
+                  - cell "20123456789" [ref=e305]
+                  - cell "+56912345678" [ref=e306]
+                  - cell "cliente_1788092374004@testing.com" [ref=e307]
+                  - cell "-" [ref=e308]
+                  - cell "-" [ref=e309]
+                  - cell "-" [ref=e310]
+                  - cell "No" [ref=e311]
+                  - cell [ref=e313]:
+                    - generic [ref=e314]:
+                      - button "Editar" [ref=e315]
+                      - button "Eliminar" [ref=e318]
+                - row [ref=e321] [cursor=pointer]:
+                  - cell "00008" [ref=e322]
+                  - cell "Cliente Prueba 1788092378870" [ref=e323]
+                  - cell "20123456789" [ref=e324]
+                  - cell "+56912345678" [ref=e325]
+                  - cell "cliente_1788092378870@testing.com" [ref=e326]
+                  - cell "-" [ref=e327]
+                  - cell "-" [ref=e328]
+                  - cell "-" [ref=e329]
+                  - cell "No" [ref=e330]
+                  - cell [ref=e332]:
+                    - generic [ref=e333]:
+                      - button "Editar" [ref=e334]
+                      - button "Eliminar" [ref=e337]
+                - row [ref=e340] [cursor=pointer]:
+                  - cell "00009" [ref=e341]
+                  - cell "Cliente Prueba 1788092383109" [ref=e342]
+                  - cell "20123456789" [ref=e343]
+                  - cell "+56912345678" [ref=e344]
+                  - cell "cliente_1788092383109@testing.com" [ref=e345]
+                  - cell "-" [ref=e346]
+                  - cell "-" [ref=e347]
+                  - cell "-" [ref=e348]
+                  - cell "No" [ref=e349]
+                  - cell [ref=e351]:
+                    - generic [ref=e352]:
+                      - button "Editar" [ref=e353]
+                      - button "Eliminar" [ref=e356]
+                - row [ref=e359] [cursor=pointer]:
+                  - cell "00010" [ref=e360]
+                  - cell "Cliente Test UI 1788094329470" [ref=e361]
+                  - cell "20300000001" [ref=e362]
+                  - cell "+56912345678" [ref=e363]
+                  - cell "cliente_1788094330398@testing.com" [ref=e364]
+                  - cell "-" [ref=e365]
+                  - cell "-" [ref=e366]
+                  - cell "-" [ref=e367]
+                  - cell "No" [ref=e368]
+                  - cell [ref=e370]:
+                    - generic [ref=e371]:
+                      - button "Editar" [ref=e372]
+                      - button "Eliminar" [ref=e375]
+                - row [ref=e378] [cursor=pointer]:
+                  - cell "00011" [ref=e379]
+                  - cell "Cliente Test UI 1788094493852" [ref=e380]
+                  - cell "20300000001" [ref=e381]
+                  - cell "+56912345678" [ref=e382]
+                  - cell "cliente_1788094494795@testing.com" [ref=e383]
+                  - cell "-" [ref=e384]
+                  - cell "-" [ref=e385]
+                  - cell "-" [ref=e386]
+                  - cell "No" [ref=e387]
+                  - cell [ref=e389]:
+                    - generic [ref=e390]:
+                      - button "Editar" [ref=e391]
+                      - button "Eliminar" [ref=e394]
+                - row [ref=e397] [cursor=pointer]:
+                  - cell "00012" [ref=e398]
+                  - cell "Cliente Test UI 1788094664283" [ref=e399]
+                  - cell "20300000001" [ref=e400]
+                  - cell "+56912345678" [ref=e401]
+                  - cell "cliente_1788094665209@testing.com" [ref=e402]
+                  - cell "-" [ref=e403]
+                  - cell "-" [ref=e404]
+                  - cell "-" [ref=e405]
+                  - cell "No" [ref=e406]
+                  - cell [ref=e408]:
+                    - generic [ref=e409]:
+                      - button "Editar" [ref=e410]
+                      - button "Eliminar" [ref=e413]
+                - row [ref=e416] [cursor=pointer]:
+                  - cell "00013" [ref=e417]
+                  - cell "Cliente E2E Playwright 1788118629269" [ref=e418]
+                  - cell "20-43599888-8" [ref=e419]
+                  - cell "-" [ref=e420]
+                  - cell "-" [ref=e421]
+                  - cell "-" [ref=e422]
+                  - cell "-" [ref=e423]
+                  - cell "-" [ref=e424]
+                  - cell "No" [ref=e425]
+                  - cell [ref=e427]:
+                    - generic [ref=e428]:
+                      - button "Editar" [ref=e429]
+                      - button "Eliminar" [ref=e432]
+                - row [ref=e435] [cursor=pointer]:
+                  - cell "00014" [ref=e436]
+                  - cell "Cliente E2E Playwright 1788118755271" [ref=e437]
+                  - cell "20-88811667-3" [ref=e438]
+                  - cell "-" [ref=e439]
+                  - cell "-" [ref=e440]
+                  - cell "-" [ref=e441]
+                  - cell "-" [ref=e442]
+                  - cell "-" [ref=e443]
+                  - cell "No" [ref=e444]
+                  - cell [ref=e446]:
+                    - generic [ref=e447]:
+                      - button "Editar" [ref=e448]
+                      - button "Eliminar" [ref=e451]
+                - row [ref=e454] [cursor=pointer]:
+                  - cell "00015" [ref=e455]
+                  - cell "Cliente E2E Playwright 1788119060150" [ref=e456]
+                  - cell "20-10239118-8" [ref=e457]
+                  - cell "-" [ref=e458]
+                  - cell "-" [ref=e459]
+                  - cell "-" [ref=e460]
+                  - cell "-" [ref=e461]
+                  - cell "-" [ref=e462]
+                  - cell "No" [ref=e463]
+                  - cell [ref=e465]:
+                    - generic [ref=e466]:
+                      - button "Editar" [ref=e467]
+                      - button "Eliminar" [ref=e470]
+                - row [ref=e473] [cursor=pointer]:
+                  - cell "00016" [ref=e474]
+                  - cell "Cliente E2E Playwright 1788120134686" [ref=e475]
+                  - cell "20-62083510-3" [ref=e476]
+                  - cell "-" [ref=e477]
+                  - cell "-" [ref=e478]
+                  - cell "-" [ref=e479]
+                  - cell "-" [ref=e480]
+                  - cell "-" [ref=e481]
+                  - cell "No" [ref=e482]
+                  - cell [ref=e484]:
+                    - generic [ref=e485]:
+                      - button "Editar" [ref=e486]
+                      - button "Eliminar" [ref=e489]
+            - navigation "Pagination" [ref=e493]:
+              - paragraph [ref=e495]: Mostrando 1 a 15 de 42 resultados
+              - generic [ref=e496]:
+                - button [disabled] [ref=e497]
+                - button "1" [ref=e500]
+                - button "2" [ref=e501]
+                - button "3" [ref=e502]
+                - button [ref=e503]
+  - region "Notifications Alt+T"
+```
+
+# Test source
+
+```ts
+  1  | import { Locator, Page } from "@playwright/test";
+  2  | import { ClientData } from "../factory/client.factory.js";
+  3  | 
+  4  | export interface CreatedClientResponse {
+  5  |   id: number;
+  6  |   customerCode: string;
+  7  | }
+  8  | 
+  9  | export default class ClientsPage {
+  10 |   readonly page: Page;
+  11 |   readonly cuitInput: Locator;
+  12 |   readonly razonSocialInput: Locator;
+  13 |   readonly emailInput: Locator;
+  14 |   readonly telefonoInput: Locator;
+  15 |   readonly domicilioInput: Locator;
+  16 |   readonly localidadInput: Locator;
+  17 |   readonly guardarCambiosButton: Locator;
+  18 | 
+  19 |   constructor(page: Page) {
+  20 |     this.page = page;
+  21 |     this.cuitInput = page.getByRole("textbox", { name: "CUIT *" });
+  22 |     this.razonSocialInput = page.getByRole("textbox", { name: "Nombre o Razón Social *" });
+  23 |     this.emailInput = page.locator("#collection_email");
+  24 |     this.telefonoInput = page.getByPlaceholder("Ej: 11-4444-5555");
+  25 |     this.domicilioInput = page.getByRole("textbox", { name: "Domicilio Fiscal" });
+  26 |     this.localidadInput = page.getByLabel("Localidad", { exact: true });
+  27 |     this.guardarCambiosButton = page.getByRole("button", { name: "Guardar Cambios" });
+  28 |   }
+  29 | 
+  30 |   async fillForm(client: ClientData): Promise<void> {
+  31 |     await this.fillCuitInput(client.cuit);
+  32 |     await this.fillRazonSocialInput(client.razonSocial);
+  33 |     await this.fillEmailInput(client.email);
+  34 |     await this.fillTelefonoInput(client.telefono);
+  35 |     await this.fillDomicilioInput(client.domicilio);
+  36 |     await this.fillLocalidadInput(client.localidad);
+  37 |   }
+  38 | 
+  39 |   async fillCuitInput(cuit: string) {
+  40 |     await this.cuitInput.fill(cuit);
+  41 |   }
+  42 | 
+  43 |   async fillRazonSocialInput(razonSocial: string) {
+  44 |     await this.razonSocialInput.fill(razonSocial);
+  45 |   }
+  46 | 
+  47 |   async fillEmailInput(email: string) {
+  48 |     await this.emailInput.fill(email);
+  49 |   }
+  50 | 
+  51 |   async fillTelefonoInput(telefono: string) {
+  52 |     await this.telefonoInput.fill(telefono);
+  53 |   }
+  54 | 
+  55 |   async fillDomicilioInput(domicilio: string) {
+  56 |     await this.domicilioInput.fill(domicilio);
+  57 |   }
+  58 | 
+  59 |   async fillLocalidadInput(localidad: string) {
+  60 |     await this.localidadInput.fill(localidad);
+  61 |   }
+  62 | 
+  63 |   async guardarCambios() {
+  64 |     await this.guardarCambiosButton.click();
+  65 |   }
+  66 | 
+  67 | // En ClientsPage.ts
+  68 | async saveChangesAndGetClientCode(): Promise<CreatedClientResponse> {
+  69 |   // Filtrar estrictamente por el endpoint de creación (método POST)
+> 70 |   const responsePromise = this.page.waitForResponse(
+     |                                     ^ Error: page.waitForResponse: Test timeout of 30000ms exceeded.
+  71 |     (response) => 
+  72 |       response.url().includes("/clients") && 
+  73 |       response.request().method() === "POST" && 
+  74 |       response.status() === 200
+  75 |   );
+  76 | 
+  77 |   await this.guardarCambios();
+  78 | 
+  79 |   const response = await responsePromise;
+  80 |   const responseJson = await response.json();
+  81 |   
+  82 |   // Extraer los datos de la respuesta POST del cliente creado
+  83 |   const data = responseJson.data;
+  84 | 
+  85 |   return {
+  86 |     id: Number(data.id),
+  87 |     customerCode: data.customer_code,
+  88 |   };
+  89 | }
+  90 | }
+```
