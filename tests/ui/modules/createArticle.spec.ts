@@ -1,5 +1,5 @@
-import { test, expect } from "./fixtures/fixtures.js";
-import { ArticleFactory } from "./factory/article.factory.js";
+import { test, expect } from "../../../fixtures/fixtures.js";
+import { ArticleFactory } from "../../../factory/article.factory.js";
 
 test.describe("Article Management Test Suite", () => {
   test("User should be able to create a new article successfully", async ({ articlesPage, sidebar }) => {

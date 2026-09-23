@@ -1,5 +1,5 @@
-import { test, expect } from "./fixtures/fixtures.js";
-import { InvoiceData, InvoiceFactory } from "./factory/invoice.factory.js";
+import { test, expect } from "../../../fixtures/fixtures.js";
+import { InvoiceData, InvoiceFactory } from "../../../factory/invoice.factory.js";
 
 test.describe("Invoice Management Test Suite", () => {
   test("User should be able to create a new invoice successfully", async ({ invoicePage, sidebar }) => {

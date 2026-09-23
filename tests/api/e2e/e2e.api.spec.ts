@@ -1,5 +1,5 @@
-import { test, expect } from "../fixtures/fixtures.js";
-import ApiDataFactory from "../factory/api.factory.js";
+import { test, expect } from "../../../fixtures/fixtures.js";
+import ApiDataFactory from "../../../factory/api.factory.js";
 
 test.describe.serial("Suite API End-To-End", () => {
   let authToken: string;

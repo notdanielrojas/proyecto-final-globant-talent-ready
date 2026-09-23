@@ -1,5 +1,5 @@
-import { test, expect } from "./fixtures/fixtures.js";
-import { ClientFactory } from "./factory/client.factory.js";
+import { test, expect } from "../../../fixtures/fixtures.js";
+import { ClientFactory } from "../../../factory/client.factory.js";
 
 test.describe("Client Management Test Suite", () => {
 

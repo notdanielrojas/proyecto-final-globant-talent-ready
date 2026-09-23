@@ -1,7 +1,7 @@
-import { test, expect } from "./fixtures/fixtures.js";
-import { PaymentFactory } from "./factory/payment.factory.js";
+import { test, expect } from "../../../fixtures/fixtures.js";
+import { PaymentFactory } from "../../../factory/payment.factory.js";
 
-test.describe("Payment module tests", () => {
+test.describe("Payment Managment Test Suite", () => {
   test("User must successfully register a payment", async ({ sidebar, paymentPage, page }) => {
     await sidebar.goToCreatePayment();
 
