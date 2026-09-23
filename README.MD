@@ -21,62 +21,74 @@ El proyecto cubre:
 
 ---
 
-## 📂 Estructura
+Aquí tienes las dos secciones de la estructura actualizadas en formato Markdown Raw para que las puedas copiar directamente a tu README.md:
+
+Markdown
+## 📂 Estructura del Proyecto
 
 ```text
 .
-├── factory/              # Generación dinámica de datos
-├── fixtures/             # Custom fixtures
-├── pages/                # Page Object Model
-├── services/             # Servicios API
-├── tests/                # Tests E2E y aislados
-├── features/             # Features BDD en Gherkin
+├── factory/                    # Generación dinámica de datos
+├── features/                   # Especificaciones BDD en Gherkin
+├── fixtures/                   # Custom fixtures
+├── pages/                      # Page Object Model (UI)
+├── services/                   # Servicios API HTTP (Backend)
+├── tests/                      # Suites de pruebas automáticas (.spec.ts)
+│   ├── api/                    # Pruebas exclusivas de Backend / API
+│   └── ui/                     # Pruebas de Interfaz de Usuario
 ├── .env.example
 ├── playwright.config.ts
 ├── package.json
 └── README.md
-```
 
 ### Principales archivos
 
 ```text
 factory/
-├── client.factory.ts
+├── api.factory.ts
 ├── article.factory.ts
+├── client.factory.ts
 ├── invoice.factory.ts
 └── payment.factory.ts
 
+features/
+├── authentication.feature
+├── colectivos_lines.feature
+├── driver_managment.feature
+└── ride_request.feature
+
+fixtures/
+└── fixtures.ts
+
 pages/
-├── LoginPage.ts
-├── ClientsPage.ts
+├── components/
+│   └── Sidebar.ts
 ├── ArticlesPage.ts
+├── ClientsPage.ts
 ├── InvoicePage.ts
+├── LoginPage.ts
 └── PaymentPage.ts
 
 services/
+├── article.api.ts
 ├── auth.api.ts
 ├── client.api.ts
-├── article.api.ts
 ├── invoice.api.ts
 └── payment.api.ts
 
-tests/e2e
-├── e2e.web.spec.ts
-└── e2e.api.spec.ts
-
-tests
-├── login.spec.ts
-├── clients.spec.ts
-├── articles.spec.ts
-├── invoice.spec.ts
-└── payment.spec.ts
-
-
-features/
-├── authentication.feature
-├── bus_lines.feature
-├── ride_request.feature
-└── driver_management.feature
+tests/
+├── api/
+│   └── e2e/
+│       └── e2e.api.spec.ts
+└── ui/
+    ├── e2e/
+    │   └── e2e.web.spec.ts
+    └── modules/
+        ├── createArticle.spec.ts
+        ├── createClient.spec.ts
+        ├── createInvoice.spec.ts
+        ├── createPayment.spec.ts
+        └── login.spec.ts
 ```
 
 ---
