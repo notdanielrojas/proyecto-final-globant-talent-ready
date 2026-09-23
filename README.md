@@ -40,6 +40,7 @@ Markdown
 ├── playwright.config.ts
 ├── package.json
 └── README.md
+```
 
 ### Principales archivos
 
