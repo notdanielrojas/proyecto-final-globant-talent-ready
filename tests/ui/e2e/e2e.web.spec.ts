@@ -1,8 +1,8 @@
-import { test, expect } from "../fixtures/fixtures.js";
-import { ClientFactory } from "../factory/client.factory.js";
-import { ArticleFactory } from "../factory/article.factory.js";
-import { InvoiceFactory } from "../factory/invoice.factory.js";
-import { PaymentFactory } from "../factory/payment.factory.js";
+import { test, expect } from "../../../fixtures/fixtures.js";
+import { ClientFactory } from "../../../factory/client.factory.js";
+import { ArticleFactory } from "../../../factory/article.factory.js";
+import { InvoiceFactory } from "../../../factory/invoice.factory.js";
+import { PaymentFactory } from "../../../factory/payment.factory.js";
 
 test.describe.serial("Web E2E Suite - Complete ERP Sales Flow", () => {
   let createdClientCode: string;

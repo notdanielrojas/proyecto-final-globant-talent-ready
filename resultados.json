@@ -4,7 +4,7 @@
       "C:\\Program Files\\nodejs\\node.exe",
       "C:\\Users\\danie\\OneDrive\\Desktop\\talent-ready\\proyecto-final-talent-ready\\node_modules\\@playwright\\test\\cli.js",
       "test",
-      "e2e.api.spec.ts"
+      "e2e.web.spec.ts"
     ],
     "configFile": "C:\\Users\\danie\\OneDrive\\Desktop\\talent-ready\\proyecto-final-talent-ready\\playwright.config.ts",
     "rootDir": "C:/Users/danie/OneDrive/Desktop/talent-ready/proyecto-final-talent-ready/tests",
@@ -104,20 +104,20 @@
   },
   "suites": [
     {
-      "title": "e2e\\e2e.api.spec.ts",
-      "file": "e2e/e2e.api.spec.ts",
+      "title": "ui\\e2e\\e2e.web.spec.ts",
+      "file": "ui/e2e/e2e.web.spec.ts",
       "column": 0,
       "line": 0,
       "specs": [],
       "suites": [
         {
-          "title": "Suite API End-To-End",
-          "file": "e2e/e2e.api.spec.ts",
-          "line": 4,
+          "title": "Web E2E Suite - Complete ERP Sales Flow",
+          "file": "ui/e2e/e2e.web.spec.ts",
+          "line": 7,
           "column": 15,
           "specs": [
             {
-              "title": "1. AUTH - Login via AuthApiService",
+              "title": "1. Create a new Client",
               "ok": true,
               "tags": [],
               "tests": [
@@ -132,12 +132,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 768,
+                      "duration": 18472,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-09-08T14:15:14.018Z",
+                      "startTime": "2026-09-23T17:51:13.900Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -145,13 +145,13 @@
                   "status": "expected"
                 }
               ],
-              "id": "8c50d15061188b0386c6-727f3f1155ea73db6349",
-              "file": "e2e/e2e.api.spec.ts",
-              "line": 13,
+              "id": "30803766a264b59939eb-087f6cfbf2198127c32d",
+              "file": "ui/e2e/e2e.web.spec.ts",
+              "line": 11,
               "column": 3
             },
             {
-              "title": "2. CLIENTS - Create client via ClientApiService",
+              "title": "2. Create a new Article",
               "ok": true,
               "tags": [],
               "tests": [
@@ -166,12 +166,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 197,
+                      "duration": 11766,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-09-08T14:15:14.810Z",
+                      "startTime": "2026-09-23T17:51:34.509Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -179,13 +179,13 @@
                   "status": "expected"
                 }
               ],
-              "id": "8c50d15061188b0386c6-bb3e0d0cddb50107b146",
-              "file": "e2e/e2e.api.spec.ts",
-              "line": 22,
+              "id": "30803766a264b59939eb-edddd8dbb27087d9a7dd",
+              "file": "ui/e2e/e2e.web.spec.ts",
+              "line": 32,
               "column": 3
             },
             {
-              "title": "2.1 CLIENTS - Update client details via ClientApiService",
+              "title": "3. Issue a new Invoice linking Client and Article",
               "ok": true,
               "tags": [],
               "tests": [
@@ -200,12 +200,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 193,
+                      "duration": 15539,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-09-08T14:15:15.014Z",
+                      "startTime": "2026-09-23T17:51:46.284Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -213,81 +213,13 @@
                   "status": "expected"
                 }
               ],
-              "id": "8c50d15061188b0386c6-253bd4afd7edf0a460ce",
-              "file": "e2e/e2e.api.spec.ts",
-              "line": 33,
-              "column": 3
-            },
-            {
-              "title": "3. ARTICLES - Create product via ArticleApiService",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 186,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-09-08T14:15:15.213Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "8c50d15061188b0386c6-e110a47f1ed5e40c92db",
-              "file": "e2e/e2e.api.spec.ts",
-              "line": 40,
-              "column": 3
-            },
-            {
-              "title": "3.1 ARTICLES - Update product details via ArticleApiService",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 184,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-09-08T14:15:15.404Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "8c50d15061188b0386c6-ac7a113e6d281f8bc867",
-              "file": "e2e/e2e.api.spec.ts",
+              "id": "30803766a264b59939eb-fccc09c3f4ee90a2133d",
+              "file": "ui/e2e/e2e.web.spec.ts",
               "line": 51,
               "column": 3
             },
             {
-              "title": "4. INVOICE - Issue invoice linking Client and Article",
+              "title": "4. Register a new Payment",
               "ok": true,
               "tags": [],
               "tests": [
@@ -302,12 +234,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 217,
+                      "duration": 13099,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-09-08T14:15:15.597Z",
+                      "startTime": "2026-09-23T17:52:01.832Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -315,81 +247,13 @@
                   "status": "expected"
                 }
               ],
-              "id": "8c50d15061188b0386c6-041618aa1ff250f1a176",
-              "file": "e2e/e2e.api.spec.ts",
-              "line": 58,
+              "id": "30803766a264b59939eb-ba3b51eb3ea90d2a5d3b",
+              "file": "ui/e2e/e2e.web.spec.ts",
+              "line": 70,
               "column": 3
             },
             {
-              "title": "5. PAYMENT - Register payment via PaymentApiService",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 218,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-09-08T14:15:15.826Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "8c50d15061188b0386c6-e997269bff4c1dd30a73",
-              "file": "e2e/e2e.api.spec.ts",
-              "line": 76,
-              "column": 3
-            },
-            {
-              "title": "6. TEARDOWN - Clean up created entities",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 719,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-09-08T14:15:16.051Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "8c50d15061188b0386c6-d29348a25841ed8c1a09",
-              "file": "e2e/e2e.api.spec.ts",
-              "line": 87,
-              "column": 3
-            },
-            {
-              "title": "1. AUTH - Login via AuthApiService",
+              "title": "1. Create a new Client",
               "ok": true,
               "tags": [],
               "tests": [
@@ -404,12 +268,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 764,
+                      "duration": 12415,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-09-08T14:15:17.265Z",
+                      "startTime": "2026-09-23T17:52:15.474Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -417,13 +281,13 @@
                   "status": "expected"
                 }
               ],
-              "id": "8c50d15061188b0386c6-9ab49f0ffc09cfb5da31",
-              "file": "e2e/e2e.api.spec.ts",
-              "line": 13,
+              "id": "30803766a264b59939eb-ee5ffb19d85d3b877b5d",
+              "file": "ui/e2e/e2e.web.spec.ts",
+              "line": 11,
               "column": 3
             },
             {
-              "title": "2. CLIENTS - Create client via ClientApiService",
+              "title": "2. Create a new Article",
               "ok": true,
               "tags": [],
               "tests": [
@@ -438,12 +302,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 194,
+                      "duration": 12381,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-09-08T14:15:18.053Z",
+                      "startTime": "2026-09-23T17:52:28.375Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -451,13 +315,13 @@
                   "status": "expected"
                 }
               ],
-              "id": "8c50d15061188b0386c6-59455c623037181e6b35",
-              "file": "e2e/e2e.api.spec.ts",
-              "line": 22,
+              "id": "30803766a264b59939eb-5a04975dba31c548e0fb",
+              "file": "ui/e2e/e2e.web.spec.ts",
+              "line": 32,
               "column": 3
             },
             {
-              "title": "2.1 CLIENTS - Update client details via ClientApiService",
+              "title": "3. Issue a new Invoice linking Client and Article",
               "ok": true,
               "tags": [],
               "tests": [
@@ -472,12 +336,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 184,
+                      "duration": 15812,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-09-08T14:15:18.254Z",
+                      "startTime": "2026-09-23T17:52:40.766Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -485,81 +349,13 @@
                   "status": "expected"
                 }
               ],
-              "id": "8c50d15061188b0386c6-465a63f4b5316bf74123",
-              "file": "e2e/e2e.api.spec.ts",
-              "line": 33,
-              "column": 3
-            },
-            {
-              "title": "3. ARTICLES - Create product via ArticleApiService",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "firefox",
-                  "projectName": "firefox",
-                  "results": [
-                    {
-                      "workerIndex": 1,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 180,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-09-08T14:15:18.444Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "8c50d15061188b0386c6-ba662be060b4af2bbdc7",
-              "file": "e2e/e2e.api.spec.ts",
-              "line": 40,
-              "column": 3
-            },
-            {
-              "title": "3.1 ARTICLES - Update product details via ArticleApiService",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "firefox",
-                  "projectName": "firefox",
-                  "results": [
-                    {
-                      "workerIndex": 1,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 180,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-09-08T14:15:18.629Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "8c50d15061188b0386c6-0b40fe0654bbec6c6e30",
-              "file": "e2e/e2e.api.spec.ts",
+              "id": "30803766a264b59939eb-56ec5bf80a1dab44e9da",
+              "file": "ui/e2e/e2e.web.spec.ts",
               "line": 51,
               "column": 3
             },
             {
-              "title": "4. INVOICE - Issue invoice linking Client and Article",
+              "title": "4. Register a new Payment",
               "ok": true,
               "tags": [],
               "tests": [
@@ -574,12 +370,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 221,
+                      "duration": 13401,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-09-08T14:15:18.815Z",
+                      "startTime": "2026-09-23T17:52:56.589Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -587,81 +383,13 @@
                   "status": "expected"
                 }
               ],
-              "id": "8c50d15061188b0386c6-2e3f1f154a7bef3a1b4e",
-              "file": "e2e/e2e.api.spec.ts",
-              "line": 58,
+              "id": "30803766a264b59939eb-7c378845038df4373d7d",
+              "file": "ui/e2e/e2e.web.spec.ts",
+              "line": 70,
               "column": 3
             },
             {
-              "title": "5. PAYMENT - Register payment via PaymentApiService",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "firefox",
-                  "projectName": "firefox",
-                  "results": [
-                    {
-                      "workerIndex": 1,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 201,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-09-08T14:15:19.046Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "8c50d15061188b0386c6-f2a0702959bd8e7dd11d",
-              "file": "e2e/e2e.api.spec.ts",
-              "line": 76,
-              "column": 3
-            },
-            {
-              "title": "6. TEARDOWN - Clean up created entities",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "firefox",
-                  "projectName": "firefox",
-                  "results": [
-                    {
-                      "workerIndex": 1,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 709,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-09-08T14:15:19.253Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "8c50d15061188b0386c6-92bc9ed6719898a56f68",
-              "file": "e2e/e2e.api.spec.ts",
-              "line": 87,
-              "column": 3
-            },
-            {
-              "title": "1. AUTH - Login via AuthApiService",
+              "title": "1. Create a new Client",
               "ok": true,
               "tags": [],
               "tests": [
@@ -676,12 +404,12 @@
                       "workerIndex": 2,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 755,
+                      "duration": 12326,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-09-08T14:15:20.436Z",
+                      "startTime": "2026-09-23T17:53:10.877Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -689,13 +417,13 @@
                   "status": "expected"
                 }
               ],
-              "id": "8c50d15061188b0386c6-6ea1bc2fec45431575af",
-              "file": "e2e/e2e.api.spec.ts",
-              "line": 13,
+              "id": "30803766a264b59939eb-2b3796b784adab8cd7c7",
+              "file": "ui/e2e/e2e.web.spec.ts",
+              "line": 11,
               "column": 3
             },
             {
-              "title": "2. CLIENTS - Create client via ClientApiService",
+              "title": "2. Create a new Article",
               "ok": true,
               "tags": [],
               "tests": [
@@ -710,12 +438,12 @@
                       "workerIndex": 2,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 193,
+                      "duration": 12395,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-09-08T14:15:21.215Z",
+                      "startTime": "2026-09-23T17:53:23.308Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -723,13 +451,13 @@
                   "status": "expected"
                 }
               ],
-              "id": "8c50d15061188b0386c6-70a2394c3106d1c92750",
-              "file": "e2e/e2e.api.spec.ts",
-              "line": 22,
+              "id": "30803766a264b59939eb-33ba1f3fb13bf9fe7b65",
+              "file": "ui/e2e/e2e.web.spec.ts",
+              "line": 32,
               "column": 3
             },
             {
-              "title": "2.1 CLIENTS - Update client details via ClientApiService",
+              "title": "3. Issue a new Invoice linking Client and Article",
               "ok": true,
               "tags": [],
               "tests": [
@@ -744,12 +472,12 @@
                       "workerIndex": 2,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 184,
+                      "duration": 16928,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-09-08T14:15:21.415Z",
+                      "startTime": "2026-09-23T17:53:35.715Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -757,81 +485,13 @@
                   "status": "expected"
                 }
               ],
-              "id": "8c50d15061188b0386c6-98d0e3ec7e100fbf59d6",
-              "file": "e2e/e2e.api.spec.ts",
-              "line": 33,
-              "column": 3
-            },
-            {
-              "title": "3. ARTICLES - Create product via ArticleApiService",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "webkit",
-                  "projectName": "webkit",
-                  "results": [
-                    {
-                      "workerIndex": 2,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 186,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-09-08T14:15:21.605Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "8c50d15061188b0386c6-84720a46eda7aa4cd724",
-              "file": "e2e/e2e.api.spec.ts",
-              "line": 40,
-              "column": 3
-            },
-            {
-              "title": "3.1 ARTICLES - Update product details via ArticleApiService",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "webkit",
-                  "projectName": "webkit",
-                  "results": [
-                    {
-                      "workerIndex": 2,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 184,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-09-08T14:15:21.796Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "8c50d15061188b0386c6-d7a40cf2d566a4a97299",
-              "file": "e2e/e2e.api.spec.ts",
+              "id": "30803766a264b59939eb-d06e1823d319beb1b978",
+              "file": "ui/e2e/e2e.web.spec.ts",
               "line": 51,
               "column": 3
             },
             {
-              "title": "4. INVOICE - Issue invoice linking Client and Article",
+              "title": "4. Register a new Payment",
               "ok": true,
               "tags": [],
               "tests": [
@@ -846,12 +506,12 @@
                       "workerIndex": 2,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 211,
+                      "duration": 15552,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-09-08T14:15:21.986Z",
+                      "startTime": "2026-09-23T17:53:52.658Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -859,77 +519,9 @@
                   "status": "expected"
                 }
               ],
-              "id": "8c50d15061188b0386c6-bc1fb5e0bd7b629a29bb",
-              "file": "e2e/e2e.api.spec.ts",
-              "line": 58,
-              "column": 3
-            },
-            {
-              "title": "5. PAYMENT - Register payment via PaymentApiService",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "webkit",
-                  "projectName": "webkit",
-                  "results": [
-                    {
-                      "workerIndex": 2,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 203,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-09-08T14:15:22.208Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "8c50d15061188b0386c6-e9ca67499eedd601bdc3",
-              "file": "e2e/e2e.api.spec.ts",
-              "line": 76,
-              "column": 3
-            },
-            {
-              "title": "6. TEARDOWN - Clean up created entities",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "webkit",
-                  "projectName": "webkit",
-                  "results": [
-                    {
-                      "workerIndex": 2,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 702,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-09-08T14:15:22.418Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "8c50d15061188b0386c6-2e7ca15820bb9f326f7d",
-              "file": "e2e/e2e.api.spec.ts",
-              "line": 87,
+              "id": "30803766a264b59939eb-74b1e6af025c571fdfa5",
+              "file": "ui/e2e/e2e.web.spec.ts",
+              "line": 70,
               "column": 3
             }
           ]
@@ -939,9 +531,9 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-09-08T14:15:13.443Z",
-    "duration": 9707.318,
-    "expected": 24,
+    "startTime": "2026-09-23T17:51:13.285Z",
+    "duration": 174973.164,
+    "expected": 12,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0

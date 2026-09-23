@@ -10,11 +10,11 @@ import Sidebar from "../pages/components/Sidebar.js";
 import InvoicePage from "../pages/InvoicePage.js";
 import PaymentPage from "../pages/PaymentPage.js";
 
-import { AuthApiService } from "../tests/services/auth.api.js";
-import { ClientApiService } from "../tests/services/client.api.js";
-import { ArticleApiService } from "../tests/services/article.api.js";
-import { InvoiceApiService } from "../tests/services/invoice.api.js";
-import { PaymentApiService } from "../tests/services/payment.api.js";
+import { AuthApiService } from "../services/auth.api.js";
+import { ClientApiService } from "../services/client.api.js";
+import { ArticleApiService } from "../services/article.api.js";
+import { InvoiceApiService } from "../services/invoice.api.js";
+import { PaymentApiService } from "../services/payment.api.js";
 
 type AllFixtures = {
   loginPage: LoginPage;
