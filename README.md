@@ -138,7 +138,9 @@ PAYMENT_URL=
 
 > No subir el archivo `.env` al repositorio.
 
-🔑 Estrategia de Autenticación (storageState)
+---
+
+## 🔑 Estrategia de Autenticación (storageState)
 Para maximizar la velocidad y estabilidad de la suite, la autenticación se realiza una sola vez antes de ejecutar las pruebas de UI a través de tests/ui/auth.setup.ts.
 
 El proyecto setup se conecta a la aplicación, inicia sesión mediante LoginPage y almacena las cookies/tokens en .auth/user.json.
