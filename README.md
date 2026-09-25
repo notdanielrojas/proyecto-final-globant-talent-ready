@@ -1,11 +1,12 @@
 # 📖 Proyecto Final - Globant Talent Ready
 
-Framework de automatización de pruebas desarrollado con **Playwright**, **TypeScript** y **@faker-js/faker**.
+Framework de automatización de pruebas E2E y API desarrollado con **Playwright**, **TypeScript** y **@faker-js/faker**.
 
 El proyecto cubre:
 
-* **ERP de Ventas:** flujo E2E de Cliente → Artículo → Factura → Cobranza.
-* **API Testing:** creación de precondiciones y datos mediante servicios HTTP.
+* **ERP de Ventas (UI):** flujo E2E completo de Cliente → Artículo → Factura → Cobranza.
+* **API Testing (Backend):** creación de precondiciones y validaciones directamente mediante servicios HTTP.
+* **Autenticación Eficiente:** reutilización de estado de sesión mediante `storageState` (`auth.setup.ts`).
 * **BDD:** especificaciones Gherkin para una App de Colectivos / Transporte.
 
 ---
@@ -18,25 +19,30 @@ El proyecto cubre:
 * **Gherkin**
 * **dotenv**
 * **Node.js**
+* **Allure Report** / HTML Reporter
 
 ---
 
-Aquí tienes las dos secciones de la estructura actualizadas en formato Markdown Raw para que las puedas copiar directamente a tu README.md:
-
-Markdown
 ## 📂 Estructura del Proyecto
 
 ```text
 .
-├── factory/                    # Generación dinámica de datos
+├── .auth/                       # Estado de sesión guardado (git-ignored)
+├── factory/                    # Generación dinámica de datos con Faker
 ├── features/                   # Especificaciones BDD en Gherkin
-├── fixtures/                   # Custom fixtures
+├── fixtures/                    # Custom fixtures (Inyección de dependencias)
 ├── pages/                      # Page Object Model (UI)
+│   └── components/             # Componentes compartidos (Sidebar)
 ├── services/                   # Servicios API HTTP (Backend)
 ├── tests/                      # Suites de pruebas automáticas (.spec.ts)
 │   ├── api/                    # Pruebas exclusivas de Backend / API
+│   │   └── e2e/
 │   └── ui/                     # Pruebas de Interfaz de Usuario
+│       ├── e2e/
+│       ├── modules/
+│       └── auth.setup.ts       # Script global de autenticación previa
 ├── .env.example
+├── .gitignore
 ├── playwright.config.ts
 ├── package.json
 └── README.md
@@ -82,6 +88,7 @@ tests/
 │   └── e2e/
 │       └── e2e.api.spec.ts
 └── ui/
+    ├── auth.setup.ts
     ├── e2e/
     │   └── e2e.web.spec.ts
     └── modules/
@@ -131,14 +138,26 @@ PAYMENT_URL=
 
 > No subir el archivo `.env` al repositorio.
 
+🔑 Estrategia de Autenticación (storageState)
+Para maximizar la velocidad y estabilidad de la suite, la autenticación se realiza una sola vez antes de ejecutar las pruebas de UI a través de tests/ui/auth.setup.ts.
+
+El proyecto setup se conecta a la aplicación, inicia sesión mediante LoginPage y almacena las cookies/tokens en .auth/user.json.
+
+Las pruebas de UI consumen directamente ese archivo mediante la propiedad storageState configurada en playwright.config.ts, permitiendo abrir las páginas con la sesión activa en 0ms.
+
 ---
 
-## 🚀 Ejecución
+## 🚀 Ejecución de Pruebas
 
-### Todas las pruebas
+### Todas las pruebas (Setup + UI + API)
 
 ```bash
 npx playwright test
+```
+
+### Solo el proceso de Autenticación (Setup)
+```bash
+npx playwright test --project=setup
 ```
 
 ### UI Mode
@@ -169,7 +188,12 @@ npx playwright test --debug
 ### Reporte HTML
 
 ```bash
+# Reporte HTML oficial
 npx playwright show-report
+
+# Allure Report
+npx allure serve allure-results
+
 ```
 
 ---
@@ -177,7 +201,7 @@ npx playwright show-report
 ## 🏗️ Arquitectura
 
 El framework utiliza:
-
+* **Session State (storageState):** Reutiliza el estado autenticado sin repetir logins gráficos.
 * **Page Object Model:** encapsula la interacción con la UI.
 * **Custom Fixtures:** centralizan páginas, servicios y datos de prueba.
 * **Factories:** generan datos dinámicos con Faker.
@@ -191,15 +215,9 @@ El framework utiliza:
 ## 🔄 Flujo E2E ERP
 
 ```text
-Login
-  ↓
-Cliente
-  ↓
-Artículo
-  ↓
-Factura
-  ↓
-Cobranza
+auth.setup.ts (Login único y guardado de sesión)
+     ↓
+Crear Cliente  →  Crear Artículo  →  Emitir Factura  →  Registrar Cobranza
 ```
 
 El flujo completo se encuentra en:
@@ -250,9 +268,12 @@ No versionar:
 
 ```text
 .env
+.auth/
 node_modules/
 playwright-report/
 test-results/
+allure-results/
+resultados.json
 ```
 
 Mantener credenciales, tokens y URLs de ambientes fuera del código fuente.
@@ -261,4 +282,4 @@ Mantener credenciales, tokens y URLs de ambientes fuera del código fuente.
 
 ## 👨‍💻 QA Automation
 
-**Playwright · TypeScript · API Testing · E2E Testing · Page Object Model · BDD · Gherkin**
+**Playwright · TypeScript · API Testing · E2E Testing · Page Object Model · StorageState · BDD · Gherkin**
