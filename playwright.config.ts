@@ -19,17 +19,45 @@ export default defineConfig({
   },
 
   projects: [
+    // 1. Proyecto Setup (Ejecuta la autenticación inicial)
+    {
+      name: "setup",
+      testMatch: /.*\.setup\.ts/,
+    },
+
+    // 2. Navegadores Web UI (Todos dependen del setup y cargan la sesión)
     {
       name: "chromium",
-      use: { ...devices["Desktop Chrome"] },
+      use: {
+        ...devices["Desktop Chrome"],
+        storageState: ".auth/user.json",
+      },
+      dependencies: ["setup"],
+      testIgnore: [/.*\.setup\.ts/, /tests\/api\/.*/],
     },
     {
       name: "firefox",
-      use: { ...devices["Desktop Firefox"] },
+      use: {
+        ...devices["Desktop Firefox"],
+        storageState: ".auth/user.json",
+      },
+      dependencies: ["setup"],
+      testIgnore: [/.*\.setup\.ts/, /tests\/api\/.*/],
     },
     {
       name: "webkit",
-      use: { ...devices["Desktop Safari"] },
+      use: {
+        ...devices["Desktop Safari"],
+        storageState: ".auth/user.json",
+      },
+      dependencies: ["setup"],
+      testIgnore: [/.*\.setup\.ts/, /tests\/api\/.*/],
+    },
+
+    // 3. Proyecto exclusivo para API (Sin navegador ni sesión UI)
+    {
+      name: "api",
+      testMatch: /tests\/api\/.*/,
     },
   ],
 });

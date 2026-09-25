@@ -68,11 +68,12 @@ test.describe.serial("Web E2E Suite - Complete ERP Sales Flow", () => {
   });
 
   test("4. Register a new Payment", async ({ paymentPage, sidebar, page }) => {
+    await sidebar.goToCreatePayment();
+    
     const paymentData = PaymentFactory.create({
       clienteCodigo: createdClientCode,
     });
 
-    await sidebar.goToCreatePayment();
     await paymentPage.fillForm(paymentData);
 
     await expect(page).toHaveURL(process.env.PAYMENT_URL!, {

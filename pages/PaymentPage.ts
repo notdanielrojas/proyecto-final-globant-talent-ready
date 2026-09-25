@@ -55,6 +55,7 @@ export default class PaymentPage {
   }
 
   async clickPayInvoiceTotalButton(): Promise<void> {
+    await this.payInvoiceTotalButton.waitFor({ state: 'visible', timeout: 10000 });
     await this.payInvoiceTotalButton.click();
   }
 

@@ -1,0 +1,114 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: ui\auth.setup.ts >> authenticate
+- Location: tests\ui\auth.setup.ts:9:1
+
+# Error details
+
+```
+Test timeout of 30000ms exceeded.
+```
+
+```
+Error: page.waitForURL: Test timeout of 30000ms exceeded.
+=========================== logs ===========================
+waiting for navigation until "load"
+  navigated to "https://imcoarca.leonardojose.dev/dashboard"
+============================================================
+```
+
+# Page snapshot
+
+```yaml
+- generic [ref=e2]:
+  - generic [ref=e3]:
+    - complementary [ref=e4]:
+      - img "Logo" [ref=e6]
+      - navigation [ref=e7]:
+        - button "Buscar en el menú" [ref=e9] [cursor=pointer]
+        - list [ref=e12]:
+          - listitem [ref=e13]:
+            - link [ref=e14] [cursor=pointer]:
+              - /url: /dashboard
+          - listitem [ref=e17]:
+            - button [ref=e19] [cursor=pointer]
+          - listitem [ref=e22]:
+            - button [ref=e24] [cursor=pointer]
+          - listitem [ref=e27]:
+            - button [ref=e29] [cursor=pointer]
+          - listitem [ref=e32]:
+            - button [ref=e34] [cursor=pointer]
+          - listitem [ref=e37]:
+            - button [ref=e39] [cursor=pointer]
+          - listitem [ref=e42]:
+            - link [ref=e43] [cursor=pointer]:
+              - /url: /reportes
+      - button [ref=e47]
+    - generic [ref=e50]:
+      - banner [ref=e51]:
+        - button "Cerrar Sesión" [ref=e52]
+      - main [ref=e53]:
+        - generic [ref=e54]:
+          - heading "Dashboard" [level=1] [ref=e55]
+          - paragraph [ref=e56]: Bienvenido al sistema ERP.
+          - generic [ref=e57]:
+            - generic [ref=e58]:
+              - heading "Cotización Dólar (Venta)" [level=2] [ref=e59]
+              - generic [ref=e60]:
+                - paragraph [ref=e61]: $1.545,00
+                - paragraph [ref=e62]: "Fuente: DolarApi (oficial)"
+                - paragraph [ref=e63]: "Actualizado: 25/09/2026, 17:20"
+            - generic [ref=e64]:
+              - button [ref=e65] [cursor=pointer]:
+                - heading "Total Saldo Clientes" [level=2] [ref=e66]
+                - generic [ref=e67]:
+                  - paragraph [ref=e68]: $ 25.359,60
+                  - paragraph [ref=e69]: Clic para ver detalle por cliente
+              - button [ref=e70] [cursor=pointer]:
+                - heading "Total Saldo Proveedores" [level=2] [ref=e71]
+                - generic [ref=e72]:
+                  - paragraph [ref=e73]: $ 0,00
+                  - paragraph [ref=e74]: Clic para ver detalle por proveedor
+  - region "Notifications Alt+T"
+```
+
+# Test source
+
+```ts
+  1  | import { test as setup } from "@playwright/test";
+  2  | import LoginPage from "../../pages/LoginPage.js";
+  3  | import fs from "fs";
+  4  | import path from "path";
+  5  | 
+  6  | const authDir = path.resolve(process.cwd(), ".auth");
+  7  | const authFile = path.join(authDir, "user.json");
+  8  | 
+  9  | setup("authenticate", async ({ page }) => {
+  10 |   // 1. Garantiza la existencia de la carpeta .auth
+  11 |   if (!fs.existsSync(authDir)) {
+  12 |     fs.mkdirSync(authDir, { recursive: true });
+  13 |   }
+  14 | 
+  15 |   const loginPage = new LoginPage(page);
+  16 | 
+  17 |   // 2. Navega e inicia sesión usando el POM
+  18 |   await loginPage.navigate();
+  19 |   await loginPage.fillForm(
+  20 |     process.env.USER_ADMIN!,
+  21 |     process.env.PASSWORD_ADMIN!
+  22 |   );
+  23 | 
+  24 |   // 3. Espera a que complete la redirección post-login
+> 25 |   await page.waitForURL(/.*(clientes|articulos|facturas|cobranzas)/);
+     |              ^ Error: page.waitForURL: Test timeout of 30000ms exceeded.
+  26 | 
+  27 |   // 4. Guarda las cookies / tokens en el JSON
+  28 |   await page.context().storageState({ path: authFile });
+  29 | });
+```
