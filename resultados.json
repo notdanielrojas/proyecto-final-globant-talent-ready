@@ -2,13 +2,12 @@
   "config": {
     "argv": [
       "C:\\Program Files\\nodejs\\node.exe",
-      "C:\\Users\\danie\\OneDrive\\Desktop\\talent-ready\\proyecto-final-talent-ready\\node_modules\\@playwright\\test\\cli.js",
+      "C:\\Users\\danie\\OneDrive\\Desktop\\talent-ready\\proyecto-final-globant-talent-ready\\node_modules\\@playwright\\test\\cli.js",
       "test",
-      "e2e.web.spec.ts",
-      "--ui"
+      "tests/ui/modules/login.spec.ts"
     ],
-    "configFile": "C:\\Users\\danie\\OneDrive\\Desktop\\talent-ready\\proyecto-final-talent-ready\\playwright.config.ts",
-    "rootDir": "C:/Users/danie/OneDrive/Desktop/talent-ready/proyecto-final-talent-ready/tests",
+    "configFile": "C:\\Users\\danie\\OneDrive\\Desktop\\talent-ready\\proyecto-final-globant-talent-ready\\playwright.config.ts",
+    "rootDir": "C:/Users/danie/OneDrive/Desktop/talent-ready/proyecto-final-globant-talent-ready/tests",
     "failOnFlakyTests": false,
     "forbidOnly": false,
     "fullyParallel": true,
@@ -24,7 +23,7 @@
     "preserveOutput": "always",
     "projects": [
       {
-        "outputDir": "C:/Users/danie/OneDrive/Desktop/talent-ready/proyecto-final-talent-ready/test-results",
+        "outputDir": "C:/Users/danie/OneDrive/Desktop/talent-ready/proyecto-final-globant-talent-ready/test-results",
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
@@ -32,15 +31,31 @@
         },
         "id": "setup",
         "name": "setup",
-        "testDir": "C:/Users/danie/OneDrive/Desktop/talent-ready/proyecto-final-talent-ready/tests",
+        "testDir": "C:/Users/danie/OneDrive/Desktop/talent-ready/proyecto-final-globant-talent-ready/tests",
         "testIgnore": [],
         "testMatch": [
-          "/.*\\.setup\\.ts/"
+          "**/auth.setup.ts"
         ],
         "timeout": 30000
       },
       {
-        "outputDir": "C:/Users/danie/OneDrive/Desktop/talent-ready/proyecto-final-talent-ready/test-results",
+        "outputDir": "C:/Users/danie/OneDrive/Desktop/talent-ready/proyecto-final-globant-talent-ready/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "login",
+        "name": "login",
+        "testDir": "C:/Users/danie/OneDrive/Desktop/talent-ready/proyecto-final-globant-talent-ready/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/login.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "C:/Users/danie/OneDrive/Desktop/talent-ready/proyecto-final-globant-talent-ready/test-results",
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
@@ -48,10 +63,11 @@
         },
         "id": "chromium",
         "name": "chromium",
-        "testDir": "C:/Users/danie/OneDrive/Desktop/talent-ready/proyecto-final-talent-ready/tests",
+        "testDir": "C:/Users/danie/OneDrive/Desktop/talent-ready/proyecto-final-globant-talent-ready/tests",
         "testIgnore": [
-          "/.*\\.setup\\.ts/",
-          "/tests\\/api\\/.*/"
+          "**/auth.setup.ts",
+          "**/api/**",
+          "**/login.spec.ts"
         ],
         "testMatch": [
           "**/*.@(spec|test).?(c|m)[jt]s?(x)"
@@ -59,7 +75,7 @@
         "timeout": 30000
       },
       {
-        "outputDir": "C:/Users/danie/OneDrive/Desktop/talent-ready/proyecto-final-talent-ready/test-results",
+        "outputDir": "C:/Users/danie/OneDrive/Desktop/talent-ready/proyecto-final-globant-talent-ready/test-results",
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
@@ -67,10 +83,11 @@
         },
         "id": "firefox",
         "name": "firefox",
-        "testDir": "C:/Users/danie/OneDrive/Desktop/talent-ready/proyecto-final-talent-ready/tests",
+        "testDir": "C:/Users/danie/OneDrive/Desktop/talent-ready/proyecto-final-globant-talent-ready/tests",
         "testIgnore": [
-          "/.*\\.setup\\.ts/",
-          "/tests\\/api\\/.*/"
+          "**/auth.setup.ts",
+          "**/api/**",
+          "**/login.spec.ts"
         ],
         "testMatch": [
           "**/*.@(spec|test).?(c|m)[jt]s?(x)"
@@ -78,7 +95,7 @@
         "timeout": 30000
       },
       {
-        "outputDir": "C:/Users/danie/OneDrive/Desktop/talent-ready/proyecto-final-talent-ready/test-results",
+        "outputDir": "C:/Users/danie/OneDrive/Desktop/talent-ready/proyecto-final-globant-talent-ready/test-results",
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
@@ -86,10 +103,11 @@
         },
         "id": "webkit",
         "name": "webkit",
-        "testDir": "C:/Users/danie/OneDrive/Desktop/talent-ready/proyecto-final-talent-ready/tests",
+        "testDir": "C:/Users/danie/OneDrive/Desktop/talent-ready/proyecto-final-globant-talent-ready/tests",
         "testIgnore": [
-          "/.*\\.setup\\.ts/",
-          "/tests\\/api\\/.*/"
+          "**/auth.setup.ts",
+          "**/api/**",
+          "**/login.spec.ts"
         ],
         "testMatch": [
           "**/*.@(spec|test).?(c|m)[jt]s?(x)"
@@ -97,7 +115,7 @@
         "timeout": 30000
       },
       {
-        "outputDir": "C:/Users/danie/OneDrive/Desktop/talent-ready/proyecto-final-talent-ready/test-results",
+        "outputDir": "C:/Users/danie/OneDrive/Desktop/talent-ready/proyecto-final-globant-talent-ready/test-results",
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
@@ -105,12 +123,223 @@
         },
         "id": "api",
         "name": "api",
-        "testDir": "C:/Users/danie/OneDrive/Desktop/talent-ready/proyecto-final-talent-ready/tests",
+        "testDir": "C:/Users/danie/OneDrive/Desktop/talent-ready/proyecto-final-globant-talent-ready/tests",
         "testIgnore": [],
         "testMatch": [
-          "/tests\\/api\\/.*/"
+          "**/api/**/*.spec.ts"
         ],
         "timeout": 30000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "C:\\Users\\danie\\OneDrive\\Desktop\\talent-ready\\proyecto-final-globant-talent-ready\\test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "setup",
+        "testDir": "C:\\Users\\danie\\OneDrive\\Desktop\\talent-ready\\proyecto-final-globant-talent-ready\\tests",
+        "snapshotDir": "C:\\Users\\danie\\OneDrive\\Desktop\\talent-ready\\proyecto-final-globant-talent-ready\\tests",
+        "testIgnore": [],
+        "testMatch": "**/auth.setup.ts",
+        "timeout": 30000,
+        "use": {
+          "trace": "on-first-retry"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "setup"
+      },
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "C:\\Users\\danie\\OneDrive\\Desktop\\talent-ready\\proyecto-final-globant-talent-ready\\test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "login",
+        "testDir": "C:\\Users\\danie\\OneDrive\\Desktop\\talent-ready\\proyecto-final-globant-talent-ready\\tests",
+        "snapshotDir": "C:\\Users\\danie\\OneDrive\\Desktop\\talent-ready\\proyecto-final-globant-talent-ready\\tests",
+        "testIgnore": [],
+        "testMatch": "**/login.spec.ts",
+        "timeout": 30000,
+        "use": {
+          "trace": "on-first-retry",
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.8078.4 Safari/537.36",
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "screen": {
+            "width": 1920,
+            "height": 1080
+          },
+          "deviceScaleFactor": 1,
+          "isMobile": false,
+          "hasTouch": false,
+          "defaultBrowserType": "chromium",
+          "storageState": {
+            "cookies": [],
+            "origins": []
+          }
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "login"
+      },
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "C:\\Users\\danie\\OneDrive\\Desktop\\talent-ready\\proyecto-final-globant-talent-ready\\test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "chromium",
+        "testDir": "C:\\Users\\danie\\OneDrive\\Desktop\\talent-ready\\proyecto-final-globant-talent-ready\\tests",
+        "snapshotDir": "C:\\Users\\danie\\OneDrive\\Desktop\\talent-ready\\proyecto-final-globant-talent-ready\\tests",
+        "testIgnore": [
+          "**/auth.setup.ts",
+          "**/api/**",
+          "**/login.spec.ts"
+        ],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 30000,
+        "use": {
+          "trace": "on-first-retry",
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.8078.4 Safari/537.36",
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "screen": {
+            "width": 1920,
+            "height": 1080
+          },
+          "deviceScaleFactor": 1,
+          "isMobile": false,
+          "hasTouch": false,
+          "defaultBrowserType": "chromium",
+          "storageState": ".auth/user.json"
+        },
+        "dependencies": [
+          "setup"
+        ],
+        "ignoreSnapshots": false,
+        "__projectId": "chromium"
+      },
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "C:\\Users\\danie\\OneDrive\\Desktop\\talent-ready\\proyecto-final-globant-talent-ready\\test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "firefox",
+        "testDir": "C:\\Users\\danie\\OneDrive\\Desktop\\talent-ready\\proyecto-final-globant-talent-ready\\tests",
+        "snapshotDir": "C:\\Users\\danie\\OneDrive\\Desktop\\talent-ready\\proyecto-final-globant-talent-ready\\tests",
+        "testIgnore": [
+          "**/auth.setup.ts",
+          "**/api/**",
+          "**/login.spec.ts"
+        ],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 30000,
+        "use": {
+          "trace": "on-first-retry",
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:157.0) Gecko/20100101 Firefox/157.0",
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "screen": {
+            "width": 1920,
+            "height": 1080
+          },
+          "deviceScaleFactor": 1,
+          "isMobile": false,
+          "hasTouch": false,
+          "defaultBrowserType": "firefox",
+          "storageState": ".auth/user.json"
+        },
+        "dependencies": [
+          "setup"
+        ],
+        "ignoreSnapshots": false,
+        "__projectId": "firefox"
+      },
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "C:\\Users\\danie\\OneDrive\\Desktop\\talent-ready\\proyecto-final-globant-talent-ready\\test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "webkit",
+        "testDir": "C:\\Users\\danie\\OneDrive\\Desktop\\talent-ready\\proyecto-final-globant-talent-ready\\tests",
+        "snapshotDir": "C:\\Users\\danie\\OneDrive\\Desktop\\talent-ready\\proyecto-final-globant-talent-ready\\tests",
+        "testIgnore": [
+          "**/auth.setup.ts",
+          "**/api/**",
+          "**/login.spec.ts"
+        ],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 30000,
+        "use": {
+          "trace": "on-first-retry",
+          "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.2 Safari/605.1.15",
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "screen": {
+            "width": 1792,
+            "height": 1120
+          },
+          "deviceScaleFactor": 2,
+          "isMobile": false,
+          "hasTouch": false,
+          "defaultBrowserType": "webkit",
+          "storageState": ".auth/user.json"
+        },
+        "dependencies": [
+          "setup"
+        ],
+        "ignoreSnapshots": false,
+        "__projectId": "webkit"
+      },
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "C:\\Users\\danie\\OneDrive\\Desktop\\talent-ready\\proyecto-final-globant-talent-ready\\test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "api",
+        "testDir": "C:\\Users\\danie\\OneDrive\\Desktop\\talent-ready\\proyecto-final-globant-talent-ready\\tests",
+        "snapshotDir": "C:\\Users\\danie\\OneDrive\\Desktop\\talent-ready\\proyecto-final-globant-talent-ready\\tests",
+        "testIgnore": [],
+        "testMatch": "**/api/**/*.spec.ts",
+        "timeout": 30000,
+        "use": {
+          "trace": "on-first-retry"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "api"
       }
     ],
     "quiet": false,
@@ -126,7 +355,7 @@
         }
       ],
       [
-        "C:\\Users\\danie\\OneDrive\\Desktop\\talent-ready\\proyecto-final-talent-ready\\node_modules\\allure-playwright\\dist\\cjs\\index.js",
+        "C:\\Users\\danie\\OneDrive\\Desktop\\talent-ready\\proyecto-final-globant-talent-ready\\node_modules\\allure-playwright\\dist\\cjs\\index.js",
         {
           "outputFolder": "allure-results"
         }
@@ -138,76 +367,28 @@
     },
     "shard": null,
     "tags": [],
-    "updateSnapshots": "missing",
+    "updateSnapshots": "default",
     "updateSourceMethod": "patch",
-    "version": "1.62.0",
+    "version": "1.64.1",
     "workers": 1,
     "webServer": null
   },
   "suites": [
     {
-      "title": "ui\\auth.setup.ts",
-      "file": "ui/auth.setup.ts",
-      "column": 0,
-      "line": 0,
-      "specs": [
-        {
-          "title": "authenticate",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 30000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "setup",
-              "projectName": "setup",
-              "results": [
-                {
-                  "workerIndex": 1,
-                  "parallelIndex": 0,
-                  "status": "passed",
-                  "duration": 10118,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2026-09-25T20:38:36.744Z",
-                  "annotations": [],
-                  "attachments": [
-                    {
-                      "name": "trace",
-                      "contentType": "application/zip",
-                      "path": "C:\\Users\\danie\\OneDrive\\Desktop\\talent-ready\\proyecto-final-talent-ready\\test-results\\ui-auth.setup.ts-authenticate-setup\\trace.zip"
-                    }
-                  ]
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "cff411035ab0ed0b1580-33c47dad00788bdf7a3e",
-          "file": "ui/auth.setup.ts",
-          "line": 9,
-          "column": 1
-        }
-      ]
-    },
-    {
-      "title": "ui\\e2e\\e2e.web.spec.ts",
-      "file": "ui/e2e/e2e.web.spec.ts",
+      "title": "ui\\modules\\login.spec.ts",
+      "file": "ui/modules/login.spec.ts",
       "column": 0,
       "line": 0,
       "specs": [],
       "suites": [
         {
-          "title": "Web E2E Suite - Complete ERP Sales Flow",
-          "file": "ui/e2e/e2e.web.spec.ts",
-          "line": 7,
-          "column": 15,
+          "title": "Login Test Suite",
+          "file": "ui/modules/login.spec.ts",
+          "line": 4,
+          "column": 6,
           "specs": [
             {
-              "title": "1. Create a new Client",
+              "title": "User login with valid credentials",
               "ok": true,
               "tags": [],
               "tests": [
@@ -215,39 +396,33 @@
                   "timeout": 30000,
                   "annotations": [],
                   "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
+                  "projectId": "login",
+                  "projectName": "login",
                   "results": [
                     {
-                      "workerIndex": 2,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 11477,
+                      "duration": 10596,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-09-25T20:38:47.863Z",
+                      "startTime": "2026-10-18T23:06:59.539Z",
                       "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "trace",
-                          "contentType": "application/zip",
-                          "path": "C:\\Users\\danie\\OneDrive\\Desktop\\talent-ready\\proyecto-final-talent-ready\\test-results\\ui-e2e-e2e.web-Web-E2E-Sui-237e4--Flow-1-Create-a-new-Client-chromium\\trace.zip"
-                        }
-                      ]
+                      "attachments": []
                     }
                   ],
                   "status": "expected"
                 }
               ],
-              "id": "30803766a264b59939eb-087f6cfbf2198127c32d",
-              "file": "ui/e2e/e2e.web.spec.ts",
-              "line": 11,
+              "id": "0862e144108036720c2d-48250d0b5b9f6ff9b2f4",
+              "file": "ui/modules/login.spec.ts",
+              "line": 5,
               "column": 3
             },
             {
-              "title": "2. Create a new Article",
+              "title": "User should not be able to login with empty fields",
               "ok": true,
               "tags": [],
               "tests": [
@@ -255,39 +430,33 @@
                   "timeout": 30000,
                   "annotations": [],
                   "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
+                  "projectId": "login",
+                  "projectName": "login",
                   "results": [
                     {
-                      "workerIndex": 2,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 12110,
+                      "duration": 9248,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-09-25T20:38:59.823Z",
+                      "startTime": "2026-10-18T23:07:10.241Z",
                       "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "trace",
-                          "contentType": "application/zip",
-                          "path": "C:\\Users\\danie\\OneDrive\\Desktop\\talent-ready\\proyecto-final-talent-ready\\test-results\\ui-e2e-e2e.web-Web-E2E-Sui-06048-Flow-2-Create-a-new-Article-chromium\\trace.zip"
-                        }
-                      ]
+                      "attachments": []
                     }
                   ],
                   "status": "expected"
                 }
               ],
-              "id": "30803766a264b59939eb-edddd8dbb27087d9a7dd",
-              "file": "ui/e2e/e2e.web.spec.ts",
-              "line": 32,
+              "id": "0862e144108036720c2d-5c842d05105c2e9f9143",
+              "file": "ui/modules/login.spec.ts",
+              "line": 15,
               "column": 3
             },
             {
-              "title": "3. Issue a new Invoice linking Client and Article",
+              "title": "User should not be able to login with invalid credentials",
               "ok": true,
               "tags": [],
               "tests": [
@@ -295,39 +464,33 @@
                   "timeout": 30000,
                   "annotations": [],
                   "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
+                  "projectId": "login",
+                  "projectName": "login",
                   "results": [
                     {
-                      "workerIndex": 2,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 15177,
+                      "duration": 10044,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-09-25T20:39:12.300Z",
+                      "startTime": "2026-10-18T23:07:19.556Z",
                       "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "trace",
-                          "contentType": "application/zip",
-                          "path": "C:\\Users\\danie\\OneDrive\\Desktop\\talent-ready\\proyecto-final-talent-ready\\test-results\\ui-e2e-e2e.web-Web-E2E-Sui-f58b9--linking-Client-and-Article-chromium\\trace.zip"
-                        }
-                      ]
+                      "attachments": []
                     }
                   ],
                   "status": "expected"
                 }
               ],
-              "id": "30803766a264b59939eb-fccc09c3f4ee90a2133d",
-              "file": "ui/e2e/e2e.web.spec.ts",
-              "line": 51,
+              "id": "0862e144108036720c2d-31d8095a3bf8059161be",
+              "file": "ui/modules/login.spec.ts",
+              "line": 24,
               "column": 3
             },
             {
-              "title": "4. Register a new Payment",
+              "title": "User should be redirected correctly when clicking \"¿Olvidaste tu contraseña?\"",
               "ok": true,
               "tags": [],
               "tests": [
@@ -335,355 +498,29 @@
                   "timeout": 30000,
                   "annotations": [],
                   "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
+                  "projectId": "login",
+                  "projectName": "login",
                   "results": [
                     {
-                      "workerIndex": 2,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 14045,
+                      "duration": 9254,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-09-25T20:39:28.076Z",
+                      "startTime": "2026-10-18T23:07:29.613Z",
                       "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "trace",
-                          "contentType": "application/zip",
-                          "path": "C:\\Users\\danie\\OneDrive\\Desktop\\talent-ready\\proyecto-final-talent-ready\\test-results\\ui-e2e-e2e.web-Web-E2E-Sui-07bd2-ow-4-Register-a-new-Payment-chromium\\trace.zip"
-                        }
-                      ]
+                      "attachments": []
                     }
                   ],
                   "status": "expected"
                 }
               ],
-              "id": "30803766a264b59939eb-ba3b51eb3ea90d2a5d3b",
-              "file": "ui/e2e/e2e.web.spec.ts",
-              "line": 70,
-              "column": 3
-            },
-            {
-              "title": "1. Create a new Client",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "firefox",
-                  "projectName": "firefox",
-                  "results": [
-                    {
-                      "workerIndex": 3,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 13596,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-09-25T20:39:43.200Z",
-                      "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "trace",
-                          "contentType": "application/zip",
-                          "path": "C:\\Users\\danie\\OneDrive\\Desktop\\talent-ready\\proyecto-final-talent-ready\\test-results\\ui-e2e-e2e.web-Web-E2E-Sui-237e4--Flow-1-Create-a-new-Client-firefox\\trace.zip"
-                        }
-                      ]
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "30803766a264b59939eb-ee5ffb19d85d3b877b5d",
-              "file": "ui/e2e/e2e.web.spec.ts",
-              "line": 11,
-              "column": 3
-            },
-            {
-              "title": "2. Create a new Article",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "firefox",
-                  "projectName": "firefox",
-                  "results": [
-                    {
-                      "workerIndex": 3,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 12681,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-09-25T20:39:57.672Z",
-                      "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "trace",
-                          "contentType": "application/zip",
-                          "path": "C:\\Users\\danie\\OneDrive\\Desktop\\talent-ready\\proyecto-final-talent-ready\\test-results\\ui-e2e-e2e.web-Web-E2E-Sui-06048-Flow-2-Create-a-new-Article-firefox\\trace.zip"
-                        }
-                      ]
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "30803766a264b59939eb-5a04975dba31c548e0fb",
-              "file": "ui/e2e/e2e.web.spec.ts",
-              "line": 32,
-              "column": 3
-            },
-            {
-              "title": "3. Issue a new Invoice linking Client and Article",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "firefox",
-                  "projectName": "firefox",
-                  "results": [
-                    {
-                      "workerIndex": 3,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 15708,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-09-25T20:40:10.749Z",
-                      "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "trace",
-                          "contentType": "application/zip",
-                          "path": "C:\\Users\\danie\\OneDrive\\Desktop\\talent-ready\\proyecto-final-talent-ready\\test-results\\ui-e2e-e2e.web-Web-E2E-Sui-f58b9--linking-Client-and-Article-firefox\\trace.zip"
-                        }
-                      ]
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "30803766a264b59939eb-56ec5bf80a1dab44e9da",
-              "file": "ui/e2e/e2e.web.spec.ts",
-              "line": 51,
-              "column": 3
-            },
-            {
-              "title": "4. Register a new Payment",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "firefox",
-                  "projectName": "firefox",
-                  "results": [
-                    {
-                      "workerIndex": 3,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 13695,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-09-25T20:40:26.953Z",
-                      "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "trace",
-                          "contentType": "application/zip",
-                          "path": "C:\\Users\\danie\\OneDrive\\Desktop\\talent-ready\\proyecto-final-talent-ready\\test-results\\ui-e2e-e2e.web-Web-E2E-Sui-07bd2-ow-4-Register-a-new-Payment-firefox\\trace.zip"
-                        }
-                      ]
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "30803766a264b59939eb-7c378845038df4373d7d",
-              "file": "ui/e2e/e2e.web.spec.ts",
-              "line": 70,
-              "column": 3
-            },
-            {
-              "title": "1. Create a new Client",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "webkit",
-                  "projectName": "webkit",
-                  "results": [
-                    {
-                      "workerIndex": 4,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 14174,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-09-25T20:40:42.212Z",
-                      "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "trace",
-                          "contentType": "application/zip",
-                          "path": "C:\\Users\\danie\\OneDrive\\Desktop\\talent-ready\\proyecto-final-talent-ready\\test-results\\ui-e2e-e2e.web-Web-E2E-Sui-237e4--Flow-1-Create-a-new-Client-webkit\\trace.zip"
-                        }
-                      ]
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "30803766a264b59939eb-2b3796b784adab8cd7c7",
-              "file": "ui/e2e/e2e.web.spec.ts",
-              "line": 11,
-              "column": 3
-            },
-            {
-              "title": "2. Create a new Article",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "webkit",
-                  "projectName": "webkit",
-                  "results": [
-                    {
-                      "workerIndex": 4,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 13459,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-09-25T20:40:56.846Z",
-                      "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "trace",
-                          "contentType": "application/zip",
-                          "path": "C:\\Users\\danie\\OneDrive\\Desktop\\talent-ready\\proyecto-final-talent-ready\\test-results\\ui-e2e-e2e.web-Web-E2E-Sui-06048-Flow-2-Create-a-new-Article-webkit\\trace.zip"
-                        }
-                      ]
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "30803766a264b59939eb-33ba1f3fb13bf9fe7b65",
-              "file": "ui/e2e/e2e.web.spec.ts",
-              "line": 32,
-              "column": 3
-            },
-            {
-              "title": "3. Issue a new Invoice linking Client and Article",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "webkit",
-                  "projectName": "webkit",
-                  "results": [
-                    {
-                      "workerIndex": 4,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 17521,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-09-25T20:41:10.644Z",
-                      "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "trace",
-                          "contentType": "application/zip",
-                          "path": "C:\\Users\\danie\\OneDrive\\Desktop\\talent-ready\\proyecto-final-talent-ready\\test-results\\ui-e2e-e2e.web-Web-E2E-Sui-f58b9--linking-Client-and-Article-webkit\\trace.zip"
-                        }
-                      ]
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "30803766a264b59939eb-d06e1823d319beb1b978",
-              "file": "ui/e2e/e2e.web.spec.ts",
-              "line": 51,
-              "column": 3
-            },
-            {
-              "title": "4. Register a new Payment",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "webkit",
-                  "projectName": "webkit",
-                  "results": [
-                    {
-                      "workerIndex": 4,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 16126,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-09-25T20:41:28.559Z",
-                      "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "trace",
-                          "contentType": "application/zip",
-                          "path": "C:\\Users\\danie\\OneDrive\\Desktop\\talent-ready\\proyecto-final-talent-ready\\test-results\\ui-e2e-e2e.web-Web-E2E-Sui-07bd2-ow-4-Register-a-new-Payment-webkit\\trace.zip"
-                        }
-                      ]
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "30803766a264b59939eb-74b1e6af025c571fdfa5",
-              "file": "ui/e2e/e2e.web.spec.ts",
-              "line": 70,
+              "id": "0862e144108036720c2d-d4dac71301544861a875",
+              "file": "ui/modules/login.spec.ts",
+              "line": 37,
               "column": 3
             }
           ]
@@ -693,9 +530,9 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-09-25T20:38:35.938Z",
-    "duration": 189222.69400000002,
-    "expected": 13,
+    "startTime": "2026-10-18T23:06:58.868Z",
+    "duration": 40058.591,
+    "expected": 4,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0

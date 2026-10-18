@@ -1,5 +1,5 @@
-import { test, expect } from './fixtures/fixtures.js';
-import { faker } from '@faker-js/faker';
+import { test, expect } from "../../../fixtures/fixtures.js";
+import { faker } from "@faker-js/faker";
 
 test.describe('Login Test Suite', () => {
   test("User login with valid credentials", async ({ page, loginPage }) => {
